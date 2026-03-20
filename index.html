@@ -322,6 +322,160 @@ label.form-label{display:block;font-size:11px;text-transform:uppercase;letter-sp
 .conv-bubble.sent{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
 .conv-bubble.recv{background:var(--surface2);color:var(--text);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px;}
 .conv-meta{font-size:10px;opacity:0.7;margin-top:4px;}
+/* ══ COBRANZAS — scoped dentro de .cob-wrapper ══ */
+.cob-wrapper {
+  --cob-mov-blue:#009fe3; --cob-mov-blue-dk:#0072b0; --cob-mov-blue-lt:#e6f6fd;
+  --cob-bg:#eef0f3; --cob-bg2:#e4e7eb;
+  --cob-surface:#ffffff; --cob-surface2:#f4f6f8;
+  --cob-border:#d1d5db; --cob-border2:#b0b8c4;
+  --cob-text:#111827; --cob-muted:#6b7280; --cob-muted2:#9ca3af;
+  --cob-green:#16a34a; --cob-green-dim:#dcfce7; --cob-green-border:#86efac;
+  --cob-yellow:#b45309; --cob-yellow-dim:#fef9c3; --cob-yellow-border:#fde047;
+  --cob-red:#dc2626; --cob-red-dim:#fee2e2; --cob-red-border:#fca5a5;
+  --cob-blue:var(--cob-mov-blue); --cob-blue-dim:var(--cob-mov-blue-lt);
+  --cob-dmt:#0072b0; --cob-dmt-dim:#e6f0f8;
+  --cob-oc:#7c3aed; --cob-oc-dim:#ede9fe;
+  --cob-fibra:#059669; --cob-repro:#0284c7; --cob-porta:#7c3aed; --cob-pyme:#ea580c;
+  font-family:'Inter',sans-serif; color:var(--cob-text); font-size:15px;
+  background:var(--cob-bg); border-radius:var(--radius-lg); overflow:hidden;
+}
+.cob-wrapper .cob-header {
+  background:var(--cob-mov-blue-dk); padding:0 20px;
+  display:flex; align-items:center; justify-content:space-between;
+  min-height:52px; box-shadow:0 2px 8px rgba(0,114,176,0.25);
+  flex-wrap:wrap; gap:8px; padding-top:8px; padding-bottom:8px;
+}
+.cob-wrapper .cob-logo { display:flex; align-items:center; gap:10px; }
+.cob-wrapper .cob-logo-mark { width:32px;height:32px;border-radius:7px;background:white;display:flex;align-items:center;justify-content:center;font-size:16px; }
+.cob-wrapper .cob-logo-text h2 { font-size:15px;font-weight:700;color:white;line-height:1; }
+.cob-wrapper .cob-logo-text span { font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:1px; }
+.cob-wrapper .cob-header-date { font-family:'DM Mono',monospace;font-size:12px;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:5px 12px;border-radius:6px; }
+.cob-wrapper .cob-objetivo-chip { font-family:'DM Mono',monospace;font-size:11px;padding:5px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.3);color:white;background:rgba(255,255,255,0.15);letter-spacing:.5px;font-weight:500; }
+.cob-wrapper .cob-btn-refresh { font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:white;cursor:pointer;transition:all .15s; }
+.cob-wrapper .cob-btn-refresh:hover { background:rgba(255,255,255,0.2); }
+.cob-wrapper .cob-main { padding:16px 20px 40px; }
+.cob-wrapper .s-title { font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cob-muted);margin-bottom:14px;margin-top:28px;display:flex;align-items:center;gap:10px; }
+.cob-wrapper .s-title::before { content:'';width:4px;height:14px;background:var(--cob-mov-blue);border-radius:2px; }
+.cob-wrapper .s-title::after { content:'';flex:1;height:1px;background:var(--cob-border); }
+.cob-wrapper .s-title:first-child { margin-top:0; }
+.cob-wrapper .hint { background:var(--cob-mov-blue-lt);border:1px solid rgba(0,159,227,.3);border-left:4px solid var(--cob-mov-blue);border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#0369a1;line-height:1.7; }
+.cob-wrapper .hint code { font-family:'DM Mono',monospace;font-size:12px;background:rgba(0,159,227,.12);padding:1px 6px;border-radius:3px; }
+.cob-wrapper .rrss-blocks { display:flex;flex-direction:column;gap:14px;margin-bottom:8px; }
+.cob-wrapper .rrss-block { background:var(--cob-surface);border:1px solid var(--cob-border);border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06); }
+.cob-wrapper .rrss-block-header { padding:12px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--cob-border);background:var(--cob-surface2); }
+.cob-wrapper .rrss-pip { width:10px;height:10px;border-radius:50%;flex-shrink:0; }
+.cob-wrapper .rrss-name { font-size:14px;font-weight:700;color:var(--cob-text); }
+.cob-wrapper .rrss-sub { font-family:'DM Mono',monospace;font-size:10px;color:var(--cob-muted);margin-left:4px; }
+.cob-wrapper .products-grid { display:grid;gap:0;grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+.cob-wrapper .product-col { background:var(--cob-surface);padding:14px;border-right:1px solid var(--cob-border); }
+.cob-wrapper .product-col:last-child { border-right:none; }
+.cob-wrapper .product-header { display:flex;align-items:center;gap:8px;margin-bottom:12px; }
+.cob-wrapper .prod-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0; }
+.cob-wrapper .prod-name { font-size:13px;font-weight:700;color:var(--cob-text); }
+.cob-wrapper .month-slots { display:flex;flex-direction:column;gap:8px; }
+.cob-wrapper .month-slot { background:var(--cob-surface2);border:1px solid var(--cob-border);border-radius:8px;overflow:hidden; }
+.cob-wrapper .month-slot-head { padding:6px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--cob-border);background:#f9fafb; }
+.cob-wrapper .slot-num { font-family:'DM Mono',monospace;font-size:10px;color:var(--cob-muted);width:40px;flex-shrink:0;font-weight:500; }
+.cob-wrapper .slot-name-input { flex:1;background:transparent;border:none;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--cob-text);outline:none; }
+.cob-wrapper .slot-status { font-family:'DM Mono',monospace;font-size:10px;color:var(--cob-muted); }
+.cob-wrapper .slot-status.ok { color:var(--cob-green); }
+.cob-wrapper .slot-status.err { color:var(--cob-red); }
+.cob-wrapper .slot-status.loading { color:var(--cob-yellow);animation:cob-blink 1s infinite; }
+@keyframes cob-blink { 0%,100%{opacity:1} 50%{opacity:.4} }
+.cob-wrapper .slot-body { padding:8px 10px;display:flex;gap:6px;background:var(--cob-surface2); }
+.cob-wrapper .slot-url { flex:1;background:white;border:1px solid var(--cob-border);border-radius:5px;padding:6px 8px;font-family:'DM Mono',monospace;font-size:10px;color:var(--cob-text);outline:none; }
+.cob-wrapper .slot-url:focus { border-color:var(--cob-mov-blue);box-shadow:0 0 0 2px var(--cob-mov-blue-lt); }
+.cob-wrapper .slot-btn { padding:6px 12px;border-radius:5px;border:1px solid var(--cob-mov-blue);background:var(--cob-mov-blue);color:white;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:'Inter',sans-serif; }
+.cob-wrapper .slot-btn:hover { background:var(--cob-mov-blue-dk);border-color:var(--cob-mov-blue-dk); }
+.cob-wrapper .slot-summary { padding:5px 10px 8px;font-family:'DM Mono',monospace;font-size:10px;color:var(--cob-green);background:#f0fdf4;border-top:1px solid var(--cob-green-border);display:none; }
+.cob-wrapper .slot-summary.show { display:block; }
+.cob-wrapper .global-banner { display:grid;grid-template-columns:auto repeat(4,1fr);gap:0;background:var(--cob-surface);border:1px solid var(--cob-border);border-radius:12px;overflow:hidden;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06); }
+@media(max-width:900px){ .cob-wrapper .global-banner { grid-template-columns:1fr 1fr; } }
+.cob-wrapper .g-kpi-total { padding:20px 24px;background:var(--cob-mov-blue-dk);color:white;display:flex;flex-direction:column;justify-content:center; }
+.cob-wrapper .global-total-label { font-size:11px;text-transform:uppercase;letter-spacing:1px;opacity:.8;margin-bottom:6px; }
+.cob-wrapper .global-total-num { font-family:'DM Mono',monospace;font-size:36px;font-weight:600;line-height:1; }
+.cob-wrapper .global-total-sub { font-size:11px;opacity:.7;margin-top:6px; }
+.cob-wrapper .g-kpi { padding:16px 20px;border-left:1px solid var(--cob-border);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px; }
+.cob-wrapper .g-kpi-icon { font-size:20px; }
+.cob-wrapper .g-kpi-num { font-family:'DM Mono',monospace;font-size:22px;font-weight:700;color:var(--cob-text); }
+.cob-wrapper .g-kpi-lbl { font-size:11px;color:var(--cob-muted);line-height:1.3; }
+.cob-wrapper .pend-month-block { margin-bottom:20px; }
+.cob-wrapper .pend-month-title { font-size:15px;font-weight:700;color:var(--cob-mov-blue-dk);margin-bottom:10px;display:flex;align-items:center;gap:8px; }
+.cob-wrapper .pend-month-title::after { content:'';flex:1;height:1px;background:var(--cob-border); }
+.cob-wrapper .pend-table-wrap { overflow-x:auto;background:var(--cob-surface);border:1px solid var(--cob-border);border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.05); }
+.cob-wrapper .pend-table { width:100%;border-collapse:collapse;min-width:700px; }
+.cob-wrapper .pend-table th { background:#f1f5f9;padding:11px 14px;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--cob-muted);border-bottom:1px solid var(--cob-border);text-align:right;white-space:nowrap; }
+.cob-wrapper .pend-table th:first-child,.cob-wrapper .pend-table th:nth-child(2) { text-align:left; }
+.cob-wrapper .pend-table td { padding:12px 14px;border-bottom:1px solid #f1f5f9;font-family:'DM Mono',monospace;font-size:14px;text-align:right; }
+.cob-wrapper .pend-table td:first-child,.cob-wrapper .pend-table td:nth-child(2) { text-align:left;font-family:'Inter',sans-serif; }
+.cob-wrapper .pend-table tr:last-child td { border-bottom:none; }
+.cob-wrapper .pend-table tr:hover td { background:#f8fafc; }
+.cob-wrapper .pend-table tr.subtotal td { background:#f1f5f9;font-weight:700;font-size:13px;border-top:2px solid var(--cob-border2); }
+
+.cob-wrapper .num-ok { color:var(--cob-green);font-weight:600; }
+.cob-wrapper .num-warn { color:var(--cob-yellow);font-weight:600; }
+.cob-wrapper .num-danger { color:var(--cob-red);font-weight:600; }
+.cob-wrapper .num-zero { color:var(--cob-muted2); }
+.cob-wrapper .num-muted { color:var(--cob-muted); }
+.cob-wrapper .rrss-chip { display:inline-block;padding:3px 9px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.3px; }
+.cob-wrapper .rrss-chip.dmt { background:var(--cob-dmt-dim);color:var(--cob-dmt);border:1px solid #bfdbfe; }
+.cob-wrapper .rrss-chip.oc  { background:var(--cob-oc-dim);color:var(--cob-oc);border:1px solid #ddd6fe; }
+.cob-wrapper .prod-chip { display:inline-block;padding:3px 9px;border-radius:4px;font-size:11px;font-weight:700; }
+.cob-wrapper .prod-chip.fibra { background:#ecfdf5;color:var(--cob-fibra);border:1px solid #a7f3d0; }
+.cob-wrapper .prod-chip.repro { background:#e0f2fe;color:var(--cob-repro);border:1px solid #7dd3fc; }
+.cob-wrapper .prod-chip.porta { background:#f5f3ff;color:var(--cob-porta);border:1px solid #c4b5fd; }
+.cob-wrapper .prod-chip.pyme  { background:#fff7ed;color:var(--cob-pyme);border:1px solid #fed7aa; }
+.cob-wrapper .mora-summary-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:8px; }
+.cob-wrapper .mora-mini { background:var(--cob-surface);border:1px solid var(--cob-border);border-radius:8px;padding:12px;box-shadow:0 1px 3px rgba(0,0,0,.05); }
+.cob-wrapper .mora-mini-top { display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px; }
+.cob-wrapper .mora-mini-prod { font-size:12px;font-weight:700; }
+.cob-wrapper .mora-mini-pct { font-family:'DM Mono',monospace;font-size:22px;font-weight:600;line-height:1; }
+.cob-wrapper .mora-mini-bar { background:var(--cob-bg2);border-radius:999px;height:5px;overflow:hidden; }
+.cob-wrapper .mora-mini-fill { height:100%;border-radius:999px;transition:width 1s; }
+.cob-wrapper .empty-txt { font-size:13px;color:var(--cob-muted);text-align:center;padding:28px;background:var(--cob-surface);border:1px solid var(--cob-border);border-radius:10px; }
+.cob-wrapper .main-nav { display:flex;gap:4px;margin-bottom:20px;background:var(--cob-surface);border:1px solid var(--cob-border);border-radius:10px;padding:4px;width:fit-content;max-width:100%;box-shadow:0 1px 3px rgba(0,0,0,.05);flex-wrap:wrap; }
+.cob-wrapper .main-nav-btn { padding:8px 18px;border-radius:7px;border:none;background:transparent;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:var(--cob-muted);cursor:pointer;transition:all .15s; }
+.cob-wrapper .main-nav-btn.active { background:var(--cob-mov-blue-dk);color:white;box-shadow:0 1px 4px rgba(0,114,176,.3); }
+.cob-wrapper .main-nav-btn:hover:not(.active) { color:var(--cob-text);background:var(--cob-bg2); }
+.cob-wrapper .main-view { display:none; }
+.cob-wrapper .main-view.active { display:block; }
+.cob-wrapper .an-grid-2 { display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:14px; }
+.cob-wrapper .an-card { background:var(--cob-surface);border:1px solid var(--cob-border);border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05); }
+.cob-wrapper .an-card-header { padding:11px 14px;border-bottom:1px solid var(--cob-border);font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center;background:#f8fafc; }
+.cob-wrapper .an-card-badge { font-family:'DM Mono',monospace;font-size:11px;background:var(--cob-bg2);border:1px solid var(--cob-border);padding:2px 8px;border-radius:4px;color:var(--cob-muted); }
+.cob-wrapper .an-scroll { max-height:360px;overflow-y:auto; }
+.cob-wrapper .an-scroll::-webkit-scrollbar { width:4px; }
+.cob-wrapper .an-scroll::-webkit-scrollbar-thumb { background:var(--cob-border);border-radius:2px; }
+.cob-wrapper .an-section { margin-bottom:24px; }
+.cob-wrapper .bar-row { display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid #f1f5f9; }
+.cob-wrapper .bar-row:last-child { border-bottom:none; }
+.cob-wrapper .bar-row:hover { background:#f8fafc; }
+.cob-wrapper .bar-label { font-size:12px;font-weight:600;width:160px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.cob-wrapper .bar-label.vendedor { width:200px; }
+.cob-wrapper .bar-wrap { flex:1;background:var(--cob-bg2);border-radius:999px;height:8px;overflow:hidden; }
+.cob-wrapper .bar-fill { height:100%;border-radius:999px;transition:width .6s; }
+.cob-wrapper .bar-pct { font-family:'DM Mono',monospace;font-size:12px;font-weight:600;width:48px;text-align:right; }
+.cob-wrapper .bar-count { font-family:'DM Mono',monospace;font-size:11px;color:var(--cob-muted);width:60px;text-align:right; }
+.cob-wrapper .bar-rank { font-family:'DM Mono',monospace;font-size:11px;color:var(--cob-muted2);width:24px;flex-shrink:0; }
+.cob-wrapper .evo-table { width:100%;border-collapse:collapse;min-width:500px; }
+.cob-wrapper .evo-table th { background:#f1f5f9;padding:9px 12px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--cob-muted);border-bottom:1px solid var(--cob-border);text-align:right;white-space:nowrap; }
+.cob-wrapper .evo-table th:first-child { text-align:left; }
+.cob-wrapper .evo-table td { padding:10px 12px;border-bottom:1px solid #f1f5f9;font-family:'DM Mono',monospace;font-size:12px;text-align:right; }
+.cob-wrapper .evo-table td:first-child { text-align:left;font-family:'Inter',sans-serif;font-weight:600;font-size:13px; }
+.cob-wrapper .evo-table tr:last-child td { border-bottom:none; }
+.cob-wrapper .evo-table tr:hover td { background:#f8fafc; }
+.cob-wrapper .vend-table { width:100%;border-collapse:collapse;min-width:600px; }
+.cob-wrapper .vend-table th { background:#f1f5f9;padding:9px 12px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--cob-muted);border-bottom:1px solid var(--cob-border);text-align:right;white-space:nowrap; }
+.cob-wrapper .vend-table th:first-child,.cob-wrapper .vend-table th:nth-child(2) { text-align:left; }
+.cob-wrapper .vend-table td { padding:10px 12px;border-bottom:1px solid #f1f5f9;font-family:'DM Mono',monospace;font-size:12px;text-align:right; }
+.cob-wrapper .vend-table td:first-child,.cob-wrapper .vend-table td:nth-child(2) { text-align:left;font-family:'Inter',sans-serif; }
+.cob-wrapper .vend-table tr:last-child td { border-bottom:none; }
+.cob-wrapper .vend-table tr:hover td { background:#f8fafc; }
+.cob-wrapper .an-filter-row { display:flex;gap:8px;margin-bottom:12px;align-items:center;flex-wrap:wrap; }
+.cob-wrapper .an-filter-row label { font-size:12px;color:var(--cob-muted);font-weight:500; }
+.cob-wrapper .an-filter-row select { background:var(--cob-surface);border:1px solid var(--cob-border);border-radius:6px;padding:6px 12px;font-size:13px;font-family:'Inter',sans-serif;color:var(--cob-text);outline:none;cursor:pointer; }
+.cob-wrapper .an-filter-row select:focus { border-color:var(--cob-mov-blue); }
+
 </style>
 </head>
 <body>
@@ -366,6 +520,7 @@ label.form-label{display:block;font-size:11px;text-transform:uppercase;letter-sp
     </div>
     <nav class="sidebar-nav" id="sidebar-nav"></nav>
     <div class="sidebar-footer">
+      <button id="btn-reset-data" class="btn-logout" style="display:none;margin-bottom:8px;border-color:rgba(239,68,68,0.3);color:rgba(239,68,68,0.6);font-size:12px;" onclick="resetData()">🗑️ Resetear datos demo</button>
       <button class="btn-logout" onclick="doLogout()">↩ Cerrar sesión</button>
     </div>
   </aside>
@@ -543,10 +698,45 @@ label.form-label{display:block;font-size:11px;text-transform:uppercase;letter-sp
       <div id="perfil-content"></div>
     </div>
 
+    <!-- CALENDARIO -->
+    <div class="page" id="page-calendario">
+      <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;">
+        <div>
+          <div class="page-title">Calendario</div>
+          <div class="page-subtitle">Recordatorios y eventos</div>
+        </div>
+        <button class="btn btn-primary" onclick="openModalReminder()">+ Nuevo recordatorio</button>
+      </div>
+      <div id="calendario-content"></div>
+    </div>
+
+    <!-- MÉTRICAS -->
+    <div class="page" id="page-metricas">
+      <div class="page-header">
+        <div class="page-title">Métricas</div>
+        <div class="page-subtitle">Panel de rendimiento del equipo</div>
+      </div>
+      <div style="margin:40px auto;max-width:560px;text-align:center;padding:48px 32px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);">
+        <div style="font-size:52px;margin-bottom:16px;">📈</div>
+        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--text);margin-bottom:10px;">En desarrollo</div>
+        <div style="font-size:14px;color:var(--text3);line-height:1.6;margin-bottom:24px;">Este módulo está siendo construido. Próximamente podrás ver métricas de deuda por mes, por producto y por vendedor de tu equipo.</div>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+          <span style="padding:6px 14px;background:var(--accent-glow);color:var(--accent);border-radius:20px;font-size:12px;font-weight:600;">📅 Por mes</span>
+          <span style="padding:6px 14px;background:var(--accent-glow);color:var(--accent);border-radius:20px;font-size:12px;font-weight:600;">📦 Por producto</span>
+          <span style="padding:6px 14px;background:var(--accent-glow);color:var(--accent);border-radius:20px;font-size:12px;font-weight:600;">👤 Por vendedor</span>
+        </div>
+      </div>
+    </div>
+
     <!-- PANEL SISTEMAS -->
     <div class="page" id="page-sistemas">
       <div class="page-header"><div class="page-title">Panel de Administración</div><div class="page-subtitle">Control total del sistema — solo perfil Sistemas</div></div>
       <div class="settings-grid" id="settings-grid"></div>
+    </div>
+
+    <!-- COBRANZAS -->
+    <div class="page" id="page-cobranzas">
+      <div class="cob-wrapper" id="cob-wrapper"></div>
     </div>
   </main>
 </div>
@@ -667,7 +857,7 @@ label.form-label{display:block;font-size:11px;text-transform:uppercase;letter-sp
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-secondary" onclick="window._resolvingError=null;closeModal('modal-new-emp')">Cancelar</button>
+      <button class="btn btn-secondary" onclick="window._resolvingError=null;window._gestionandoBaja=null;closeModal('modal-new-emp')">Cancelar</button>
       <button class="btn btn-primary" onclick="saveEmployee()">Guardar empleado</button>
     </div>
   </div>
@@ -682,6 +872,49 @@ label.form-label{display:block;font-size:11px;text-transform:uppercase;letter-sp
     </div>
     <div class="modal-body" style="max-height:75vh;overflow-y:auto;" id="emp-view-body"></div>
     <div class="modal-footer" id="emp-view-footer"></div>
+  </div>
+</div>
+
+<!-- NUEVO RECORDATORIO -->
+<div class="modal-overlay" id="modal-reminder">
+  <div class="modal" style="max-width:480px;">
+    <div class="modal-header">
+      <div class="modal-title" id="reminder-modal-title">Nuevo recordatorio</div>
+      <button class="modal-close" onclick="closeModal('modal-reminder')">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="reminder-edit-id">
+      <div class="form-group">
+        <label class="form-label">Título *</label>
+        <input class="form-input" id="reminder-titulo" placeholder="Ej: Reunión de equipo">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Fecha *</label>
+          <input class="form-input" id="reminder-fecha" type="date">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hora</label>
+          <input class="form-input" id="reminder-hora" type="time" value="09:00">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Color</label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;" id="reminder-colors">
+          <div class="reminder-color-opt" data-color="#185FA5" style="width:28px;height:28px;border-radius:50%;background:#185FA5;cursor:pointer;border:3px solid #185FA5;"></div>
+          <div class="reminder-color-opt" data-color="#3B6D11" style="width:28px;height:28px;border-radius:50%;background:#3B6D11;cursor:pointer;"></div>
+          <div class="reminder-color-opt" data-color="#A32D2D" style="width:28px;height:28px;border-radius:50%;background:#A32D2D;cursor:pointer;"></div>
+          <div class="reminder-color-opt" data-color="#BA7517" style="width:28px;height:28px;border-radius:50%;background:#BA7517;cursor:pointer;"></div>
+          <div class="reminder-color-opt" data-color="#534AB7" style="width:28px;height:28px;border-radius:50%;background:#534AB7;cursor:pointer;"></div>
+          <div class="reminder-color-opt" data-color="#993556" style="width:28px;height:28px;border-radius:50%;background:#993556;cursor:pointer;"></div>
+        </div>
+        <input type="hidden" id="reminder-color" value="#185FA5">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-reminder')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveReminder()">Guardar</button>
+    </div>
   </div>
 </div>
 
@@ -993,10 +1226,58 @@ let tasks = [
 
 let customEmpFields = [];
 let customPdvFields = [];
+let reminders = [
+  {id:'r1',empId:'e4',titulo:'Reunión de equipo',fecha:'2026-03-25',hora:'10:00',color:'#185FA5',createdBy:'e4'},
+  {id:'r2',empId:'e4',titulo:'Vencimiento seguro',fecha:'2026-04-01',hora:'09:00',color:'#A32D2D',createdBy:'e4'},
+];
 let changelog = [
   {id:'cl1',empId:'e2',fecha:'2025-05-10T10:00:00',autor:'Admin RRHH',perfil:'rrhh',tipo:'edicion',cambios:['Vacaciones: 21 días asignados','Período 2025-07-01 → 2025-07-21']},
   {id:'cl2',empId:'e7',fecha:'2024-01-15T09:30:00',autor:'Admin RRHH',perfil:'rrhh',tipo:'baja',cambios:['Estado cambiado a Baja','Fecha de baja: 2024-01-15']},
 ];
+
+/* ═══════════════════════════════════════
+   PERSISTENCIA — localStorage
+═══════════════════════════════════════ */
+const LS_KEY='damatec_v4_data';
+
+function saveData(){
+  try{
+    localStorage.setItem(LS_KEY, JSON.stringify({
+      employees, pdvs, messages, notifications, tasks,
+      sectors, changelog, customEmpFields, customPdvFields, toolsConfig, reminders,
+    }));
+  }catch(e){ console.warn('localStorage error:', e); }
+}
+
+function loadData(){
+  try{
+    const raw=localStorage.getItem(LS_KEY);
+    if(!raw) return false;
+    const d=JSON.parse(raw);
+    if(d.employees)       employees=d.employees;
+    if(d.pdvs)            pdvs=d.pdvs;
+    if(d.messages)        messages=d.messages;
+    if(d.notifications)   notifications=d.notifications;
+    if(d.tasks)           tasks=d.tasks;
+    if(d.sectors)         sectors=d.sectors;
+    if(d.changelog)       changelog=d.changelog;
+    if(d.customEmpFields) customEmpFields=d.customEmpFields;
+    if(d.customPdvFields) customPdvFields=d.customPdvFields;
+    if(d.toolsConfig)     toolsConfig=d.toolsConfig;
+    if(d.reminders)       reminders=d.reminders;
+    return true;
+  }catch(e){ console.warn('loadData error:', e); return false; }
+}
+
+function resetData(){
+  confirm2('⚠️ Resetear datos','Esto borrará todos los cambios y volverá a los datos de demo. ¿Confirmás?',()=>{
+    localStorage.removeItem(LS_KEY);
+    location.reload();
+  });
+}
+
+// Cargar datos guardados al iniciar la página
+loadData();
 
 /* ═══════════════════════════════════════
    AUTH
@@ -1034,10 +1315,10 @@ function doLogout(){confirm2('¿Cerrar sesión?','Vas a salir del sistema.',()=>
    PERMISSIONS
 ═══════════════════════════════════════ */
 const PERMS={
-  sistemas:['sys-dashboard','empleados','herramientas','pdv','mensajes','vacaciones','sistemas'],
-  rrhh:    ['dashboard','empleados','mensajes','vacaciones'],
-  calidad: ['dashboard','empleados','herramientas','pdv','mensajes','vacaciones'],
-  empleado:['emp-dashboard','perfil','mensajes'],
+  sistemas:['sys-dashboard','empleados','herramientas','pdv','mensajes','vacaciones','sistemas','calendario','cobranzas'],
+  rrhh:    ['dashboard','empleados','mensajes','vacaciones','calendario'],
+  calidad: ['dashboard','empleados','herramientas','pdv','mensajes','vacaciones','calendario','cobranzas'],
+  empleado:['emp-dashboard','perfil','mensajes','calendario'],
 };
 function can(p){return (PERMS[currentUser]||[]).includes(p);}
 function canCreate(what){
@@ -1069,6 +1350,7 @@ function initApp(){
   renderEmpDashboard();
   renderSysDashboard();
   renderSettings();
+  renderCalendario();
   // hide sector btn for rrhh
   const btnSec=document.getElementById('btn-new-sector');
   if(btnSec) btnSec.style.display=canCreate('sector')?'inline-flex':'none';
@@ -1078,9 +1360,13 @@ function initApp(){
   if(currentUser==='sistemas') navigateTo('sys-dashboard');
   else if(currentUser==='empleado') navigateTo('emp-dashboard');
   else navigateTo('dashboard');
+  // Mostrar botón reset en admin
+  const resetBtn=document.getElementById('btn-reset-data');
+  if(resetBtn) resetBtn.style.display=currentUser==='sistemas'?'inline-flex':'none';
 }
 
 function buildNav(){
+  const isSup=currentUser==='empleado'&&(employees.find(e=>e.id===(window._loggedEmpId||'e4'))?.supervisor);
   const items=[
     {page:'dashboard',icon:'📊',label:'Dashboard'},
     {page:'sys-dashboard',icon:'📊',label:'Dashboard'},
@@ -1090,11 +1376,14 @@ function buildNav(){
     {page:'pdv',icon:'🏪',label:'PDV Externos'},
     {page:'mensajes',icon:'✉️',label:'Mensajes'},
     {page:'vacaciones',icon:'🏖️',label:'Vacaciones'},
+    {page:'calendario',icon:'📅',label:'Calendario'},
+    {page:'cobranzas',icon:'💰',label:'Métricas'},
     {page:'perfil',icon:'👤',label:'Mi Perfil'},
     {page:'sistemas',icon:'⚙️',label:'Administración'},
+    ...(isSup?[{page:'metricas',icon:'📈',label:'Métricas'}]:[]),
   ];
   const nav=document.getElementById('sidebar-nav');
-  nav.innerHTML=items.filter(it=>can(it.page)).map(it=>
+  nav.innerHTML=items.filter(it=>can(it.page)||(it.page==='metricas'&&isSup)).map(it=>
     `<div class="nav-item" id="nav-${it.page}" onclick="navigateTo('${it.page}')">`+
     `<span class="nav-icon">${it.icon}</span>${it.label}</div>`
   ).join('');
@@ -1112,6 +1401,8 @@ function navigateTo(page){
   if(page==='sys-dashboard') renderSysDashboard();
   if(page==='perfil') renderPerfil();
   if(page==='empleados') renderEmployees();
+  if(page==='calendario') renderCalendario();
+  if(page==='cobranzas') initCobranzas();
 }
 
 /* ═══════════════════════════════════════
@@ -1122,7 +1413,7 @@ function buildSolicitudesPendientesHtml(notifs){
   if(!activas.length) return '';
   let rows='';
   activas.forEach(n=>{
-    const isUrgent=n.urgent||n.type==='baja-herramientas'||n.type==='tool-error';
+    const isUrgent=n.urgent||n.type==='baja-herramientas'||n.type==='baja-email'||n.type==='tool-error';
     const bg=isUrgent?'var(--red-dim)':'var(--yellow-dim)';
     const borde=isUrgent?'rgba(163,45,45,.25)':'rgba(186,117,23,.25)';
     const color=isUrgent?'var(--red)':'var(--yellow)';
@@ -1131,8 +1422,11 @@ function buildSolicitudesPendientesHtml(notifs){
       btnLabel='🔧 Resolver';
       btnAction='resolverErrorHerramienta(\''+n.id+'\')';
     } else if(n.type==='baja-herramientas'){
-      btnLabel='Gestionar baja';
-      btnAction=n.empId?'editEmployee(\''+n.empId+'\')':'';
+      btnLabel='🛠️ Gestionar baja';
+      btnAction='gestionarBajaHerramientas(\''+n.id+'\')';
+    } else if(n.type==='baja-email'){
+      btnLabel='📧 Dar de baja correo';
+      btnAction='gestionarBajaEmail(\''+n.id+'\')';
     } else {
       btnLabel=n.type==='request-damatec'?'Crear acceso'
         :n.type==='request-vpnt3'?'Asignar herramientas'
@@ -1152,7 +1446,7 @@ function buildSolicitudesPendientesHtml(notifs){
       +'</div>';
   });
   if(!rows) return '';
-  const urgCount=activas.filter(n=>n.urgent||n.type==='tool-error'||n.type==='baja-herramientas').length;
+  const urgCount=activas.filter(n=>n.urgent||n.type==='tool-error'||n.type==='baja-herramientas'||n.type==='baja-email').length;
   return '<div style="padding:12px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;">'
     +'<div style="font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:'+(urgCount?'var(--red)':'var(--yellow)')+';font-weight:700;margin-bottom:8px;">'
     +(urgCount?'🔴':'⏳')+' Solicitudes pendientes ('+activas.length+')</div>'
@@ -1198,14 +1492,14 @@ function renderDashboard(){
       })
     : [];
 
-  // Solicitudes pendientes para Sistemas (email)
+  // Solicitudes pendientes para Sistemas (email + baja de correo)
   const solicitudesSistemas=currentUser==='sistemas'
-    ? notifications.filter(n=>!n.resuelta&&n.type==='request-email'&&n.target==='sistemas')
+    ? notifications.filter(n=>!n.resuelta&&(n.type==='request-email'||n.type==='baja-email')&&n.target==='sistemas')
         .sort((a,b)=>new Date(b.fecha)-new Date(a.fecha))
     : [];
 
   const otherNotifs=notifications.filter(n=>{
-    if(['baja-herramientas','request-damatec','request-vpnt3','request-email','tool-error'].includes(n.type)) return false;
+    if(['baja-herramientas','baja-email','request-damatec','request-vpnt3','request-email','tool-error'].includes(n.type)) return false;
     if(n.fecha.split('T')[0]!==todayStr) return false;
     if(n.target==='calidad') return currentUser==='calidad';
     if(n.target==='rrhh') return currentUser==='rrhh';
@@ -1304,7 +1598,7 @@ function renderTasks(){
 
 function completeTask(id){
   const t=tasks.find(x=>x.id===id);
-  if(t){t.done=true;renderTasks();renderDashboard();showToast('Tarea completada','success');}
+  if(t){t.done=true;renderTasks();renderDashboard();showToast('Tarea completada','success');saveData();}
 }
 
 function addTask(){
@@ -1316,6 +1610,7 @@ function addTask(){
   closeModal('modal-task');
   renderTasks();
   showToast('Tarea agregada','success');
+  saveData();
   document.getElementById('task-desc').value='';
   document.getElementById('task-deadline').value='';
 }
@@ -1397,31 +1692,89 @@ function bajaPrompt(id){
     if(emp.vpnUser) toolSnap.push(`VPN: ${emp.vpnUser}`);
     if(emp.t3User) toolSnap.push(`T3: ${emp.t3User}`);
     if(emp.centrUser) toolSnap.push(`Centralizador: ${emp.centrUser}`);
-    // Record changelog with tools at time of baja
     addChangelog(emp.id,'baja',[
       `Estado cambiado a Baja`,
       `Fecha de baja: ${emp.baja}`,
       ...(toolSnap.length?[`Herramientas activas al dar de baja: ${toolSnap.join(', ')}`]:[]),
     ]);
-    // Notificar a Calidad para que gestione la baja de herramientas
+    const ts=Date.now();
+    const bajaNotifId='n'+ts;
+    // Notificar a Calidad — gestionar baja de herramientas
     notifications.push({
-      id:'n'+Date.now(),
+      id:bajaNotifId,
       type:'baja-herramientas',
       target:'calidad',
-      text:`⚠️ Baja registrada: ${emp.nombre} ${emp.apellido}. Calidad debe gestionar la baja de sus herramientas (VPN, T3, Centralizador).`,
+      text:`⚠️ Baja registrada: ${emp.nombre} ${emp.apellido}. Gestionar baja de todas las herramientas.`,
       empId:emp.id,
       empName:`${emp.nombre} ${emp.apellido}`,
       fecha:new Date().toISOString(),
       read:false,
       urgent:true,
+      resuelta:false,
     });
+    // Notificar a Sistemas — dar de baja correo empresarial
+    if(emp.email){
+      notifications.push({
+        id:'n'+(ts+1),
+        type:'baja-email',
+        target:'sistemas',
+        text:`⚠️ Baja registrada: ${emp.nombre} ${emp.apellido}. Dar de baja correo empresarial: ${emp.email}`,
+        empId:emp.id,
+        empName:`${emp.nombre} ${emp.apellido}`,
+        empEmail:emp.email,
+        fecha:new Date().toISOString(),
+        read:false,
+        urgent:true,
+        resuelta:false,
+      });
+    }
     renderEmployees();renderToolBoard();
     if(can('dashboard')) renderDashboard();
-    showToast(`${emp.nombre} dado/a de baja. Calidad fue notificado/a.`,'info');
+    showToast(`${emp.nombre} dado/a de baja. Calidad y Sistemas fueron notificados.`,'info');
+    saveData();
   });
 }
 
-/* ── VIEW EMPLOYEE ── */
+/* ── GESTIÓN DE BAJA ── */
+function gestionarBajaHerramientas(notifId){
+  const notif=notifications.find(n=>n.id===notifId);
+  if(!notif) return;
+  // Store context so editEmployee shows a baja banner and doSaveEmployee can mark as resolved
+  window._gestionandoBaja={notifId, empId:notif.empId, type:'herramientas'};
+  closeModal&&closeModal('modal-view-emp');
+  editEmployee(notif.empId);
+  showToast('Modificá las credenciales necesarias y presioná Guardar para completar la baja','info');
+}
+
+function gestionarBajaEmail(notifId){
+  const notif=notifications.find(n=>n.id===notifId);
+  if(!notif) return;
+  const emp=employees.find(e=>e.id===notif.empId);
+  if(!emp) return;
+  confirm2(
+    '📧 Dar de baja correo empresarial',
+    `¿Confirmás la baja del correo <strong>${notif.empEmail||emp.email}</strong> de ${notif.empName}?`,
+    ()=>{
+      // Clear email from employee
+      emp.email='';
+      emp.emailPass='';
+      // Mark notification resolved
+      notif.resuelta=true; notif.read=true;
+      addChangelog(emp.id,'herramientas',['Correo empresarial dado de baja por Sistemas']);
+      messages.unshift({
+        id:'msg'+Date.now(),tipo:'individual',to:emp.id,
+        toName:emp.nombre+' '+emp.apellido,
+        asunto:'📧 Correo empresarial dado de baja',
+        body:'Tu correo empresarial fue dado de baja como parte del proceso de egreso.',
+        fecha:new Date().toISOString(),from:'sistemas',fromName:'Sistemas',
+        replies:[],sistemaAutomatico:true,
+      });
+      renderDashboard();renderEmployees();
+      showToast('Correo de '+emp.nombre+' dado de baja correctamente','success');
+      saveData();
+    }
+  );
+}
 function viewEmployee(id){
   const emp=employees.find(e=>e.id===id);
   if(!emp) return;
@@ -1621,6 +1974,7 @@ function saveNote(empId){
   document.getElementById(`notes-container-${empId}`).innerHTML=renderNotesHtml(emp);
   document.getElementById(`note-input-${empId}`).value='';
   showToast('Nota guardada','success');
+  saveData();
 }
 function addNoteToEmp(empId){
   // focus textarea
@@ -1661,8 +2015,10 @@ function editEmployee(id){
   window._formSolicitudes={}; // reset form state for this session
   // If opened via "Resolver" button, show title accordingly
   const ctx=window._resolvingError;
-  document.getElementById('emp-modal-title').textContent=(ctx&&ctx.empId===id)
-    ?'🔧 Resolver error — '+ctx.toolName
+  const bajaCtx=window._gestionandoBaja;
+  document.getElementById('emp-modal-title').textContent=
+    (ctx&&ctx.empId===id)?'🔧 Resolver error — '+ctx.toolName
+    :(bajaCtx&&bajaCtx.empId===id)?'🛠️ Gestionar baja de herramientas'
     :'Editar Empleado';
   document.getElementById('emp-edit-id').value=id;
   buildSectorFilter();
@@ -1686,6 +2042,12 @@ function editEmployee(id){
     const banner=document.createElement('div');
     banner.style.cssText='padding:10px 14px;background:var(--red-dim);border:1px solid rgba(163,45,45,.3);border-radius:var(--radius);margin-bottom:12px;font-size:13px;color:var(--red);font-weight:500;';
     banner.innerHTML='⚠️ Resolviendo error en <strong>'+ctx.toolName+'</strong> — actualizá las credenciales y presioná Guardar.';
+    herramientasSection.insertBefore(banner,herramientasSection.firstChild);
+  }
+  if(bajaCtx&&bajaCtx.empId===id&&herramientasSection){
+    const banner=document.createElement('div');
+    banner.style.cssText='padding:10px 14px;background:var(--red-dim);border:1px solid rgba(163,45,45,.3);border-radius:var(--radius);margin-bottom:12px;font-size:13px;color:var(--red);font-weight:500;';
+    banner.innerHTML='🛠️ Gestión de baja — modificá las credenciales necesarias y presioná Guardar para completar.';
     herramientasSection.insertBefore(banner,herramientasSection.firstChild);
   }
   openModal('modal-new-emp');
@@ -1907,6 +2269,7 @@ function solicitarDamatecCalidad(){
   showToast('Solicitud enviada a Calidad','success');
   renderHerramientasForm();
   if(can('dashboard')) renderDashboard();
+  saveData();
 }
 
 function solicitarEmailSistemas(){
@@ -1933,6 +2296,7 @@ function solicitarEmailSistemas(){
   showToast('Solicitud enviada a Sistemas','success');
   renderHerramientasForm();
   if(currentUser==='sistemas') renderSysDashboard();
+  saveData();
 }
 
 function solicitarVpnT3Calidad(){
@@ -1959,6 +2323,7 @@ function solicitarVpnT3Calidad(){
   showToast('Solicitud enviada a Calidad','success');
   renderHerramientasForm();
   if(can('dashboard')) renderDashboard();
+  saveData();
 }
 
 /* ── PANEL DE CALIDAD: completar credenciales desde notificación ── */
@@ -2031,6 +2396,7 @@ function guardarCredencial(){
   if(can('dashboard')) renderDashboard();
   if(currentUser==='calidad') renderDashboard();
   addChangelog(emp.id,'herramientas',['Credenciales completadas por '+PROFILES[currentUser]?.name]);
+  saveData();
 }
 /* ── VACACIONES EN FORM ── */
 function addVacPeriod(data){
@@ -2197,7 +2563,7 @@ function doSaveEmployee(nombre,apellido,isSup,existSup){
       const vacChanged=(prevDias!==vacDias)||(prevPeriodos!==newPeriodos);
       employees[idx]={...ex,...data};
       // Restore fields that should not be overwritten by the form
-      ['vpnAssigned','t3Assigned','centrAssigned','notas','errores'].forEach(k=>{if(ex[k]!==undefined)employees[idx][k]=ex[k];});
+      ['vpnAssigned','t3Assigned','centrAssigned','notas'].forEach(k=>{if(ex[k]!==undefined)employees[idx][k]=ex[k];});
       // Calidad no puede modificar vacaciones
       if(currentUser==='calidad'){
         employees[idx].vacDias=ex.vacDias||0;
@@ -2207,12 +2573,22 @@ function doSaveEmployee(nombre,apellido,isSup,existSup){
       employees[idx].solDamatec = data.userDamatec ? false : (ex.solDamatec||false);
       employees[idx].solEmail = data.email ? false : (ex.solEmail||false);
       employees[idx].solVpnT3Centr = (data.vpnUser||data.t3User||data.centrUser) ? false : (ex.solVpnT3Centr||false);
-      // Resolve tool error if Calidad opened this modal via "Resolver" button
-      // Must run AFTER errores is restored so the delete operates on the live object
+      // Handle errores: copy existing, then resolve if applicable
+      employees[idx].errores = Object.assign({}, ex.errores||{});
       if(window._resolvingError && window._resolvingError.empId===editingEmpId){
         const ctx=window._resolvingError;
+        delete employees[idx].errores[ctx.toolId];
         finalizarResolucionError(ctx.empId, ctx.toolId, ctx.notifId, ctx.taskId);
         window._resolvingError=null;
+      }
+      // Mark baja-herramientas notification as resolved when Calidad saves from baja context
+      if(window._gestionandoBaja && window._gestionandoBaja.empId===editingEmpId){
+        const bCtx=window._gestionandoBaja;
+        const bNotif=notifications.find(n=>n.id===bCtx.notifId);
+        if(bNotif){bNotif.resuelta=true;bNotif.read=true;}
+        addChangelog(editingEmpId,'herramientas',['Herramientas dadas de baja por Calidad']);
+        window._gestionandoBaja=null;
+        renderDashboard();
       }
       // Notify RRHH + employee when Sistemas fills email
       if(!ex.email && data.email && currentUser==='sistemas'){
@@ -2268,6 +2644,7 @@ function doSaveEmployee(nombre,apellido,isSup,existSup){
   if(can('dashboard')) renderDashboard();
   if(currentUser==='sistemas') renderSysDashboard();
   renderVacaciones();
+  saveData();
 }
 
 /* ── TOOLS VIEW ── */
@@ -2304,7 +2681,7 @@ function buildToolsHtml(emp,mode){
 
 function updateToolCred(empId,key,val){
   const emp=employees.find(e=>e.id===empId);
-  if(emp){emp[key]=val;renderToolBoard();showToast('Credencial actualizada','success');}
+  if(emp){emp[key]=val;renderToolBoard();showToast('Credencial actualizada','success');saveData();}
 }
 function copyToolCred(user,pass){
   navigator.clipboard.writeText(`Usuario: ${user}\nContraseña: ${pass}`).then(()=>showToast('Copiado al portapapeles','success')).catch(()=>showToast(`U: ${user} P: ${pass}`,'info'));
@@ -2321,6 +2698,7 @@ function saveSector(){
   closeModal('modal-sector');
   showToast('Sector creado','success');
   document.getElementById('sf-nombre').value='';
+  saveData();
 }
 
 /* ═══════════════════════════════════════
@@ -2472,6 +2850,7 @@ function savePDV(){
   else pdvs.push(pdvObj);
   closeModal('modal-pdv');renderPDV();renderToolBoard();
   showToast(editingPdvId?'PDV actualizado':'PDV creado','success');
+  saveData();
 }
 function renderPDV(){
   const canEdit=currentUser==='sistemas'||currentUser==='calidad';
@@ -2644,7 +3023,7 @@ function deletePDV(id){
   const pdv=pdvs.find(p=>p.id===id);if(!pdv) return;
   confirm2('¿Eliminar PDV?',`Se eliminará el PDV <strong>${pdv.nombre} ${pdv.apellido}</strong>.`,()=>{
     ['vpn','t3','centralizador'].forEach(t=>{const keys=getToolKeys(t);[pdv[t]?.slot1,pdv[t]?.slot2].filter(Boolean).forEach(eid=>{const emp=employees.find(e=>e.id===eid);if(emp)emp[keys.a]=(emp[keys.a]||[]).filter(x=>x!==id);});});
-    pdvs=pdvs.filter(p=>p.id!==id);renderPDV();renderToolBoard();showToast('PDV eliminado','success');
+    pdvs=pdvs.filter(p=>p.id!==id);renderPDV();renderToolBoard();showToast('PDV eliminado','success');saveData();
   });
 }
 
@@ -2796,6 +3175,7 @@ function guardarPDVHerramientas(){
   renderPDV();
   renderToolBoard();
   showToast(cambiosLog.length+' cambio'+( cambiosLog.length>1?'s':'')+' guardado'+( cambiosLog.length>1?'s':'')+' y aplicado'+( cambiosLog.length>1?'s':'')+' en los perfiles','success');
+  saveData();
 }
 
 /* ═══════════════════════════════════════
@@ -2859,7 +3239,7 @@ function sendMsg(){
         msg.asunto=asunto;msg.body=body;
         if(tipo==='masivo'){msg.expiry=document.getElementById('msg-expiry')?.value||null;}
         if(tipo==='evento'){msg.eventDate=document.getElementById('msg-event-date')?.value||null;}
-        closeModal('modal-msg');renderMessages();showToast('Mensaje actualizado','success');
+        closeModal('modal-msg');renderMessages();showToast('Mensaje actualizado','success');saveData();
       });
     }
     return;
@@ -2875,7 +3255,7 @@ function sendMsg(){
   if(tipo==='evento') msg.eventDate=document.getElementById('msg-event-date')?.value||null;
 
   messages.unshift(msg);
-  closeModal('modal-msg');renderMessages();renderDashboard();
+  closeModal('modal-msg');renderMessages();renderDashboard();saveData();
   showToast('Mensaje enviado','success');
 }
 
@@ -2967,7 +3347,7 @@ function sendReply(msgId){
   if(!msg) return;
   msg.replies.push({from:currentUser,fromName:PROFILES[currentUser].name,body:txt,fecha:new Date().toISOString()});
   notifications.push({id:'n'+Date.now(),type:'reply',text:`${PROFILES[currentUser].name} respondió: "${msg.asunto}"`,fecha:new Date().toISOString(),read:false});
-  viewMsg(msgId);renderMessages();showToast('Respuesta enviada','success');
+  viewMsg(msgId);renderMessages();showToast('Respuesta enviada','success');saveData();
 }
 
 function editMsg(id){
@@ -2984,7 +3364,7 @@ function editMsg(id){
 function deleteMsg(id){
   const msg=messages.find(m=>m.id===id);if(!msg) return;
   confirm2('¿Eliminar mensaje?',`Se eliminará <strong>${msg.asunto}</strong>. Esta acción no se puede deshacer.`,()=>{
-    messages=messages.filter(m=>m.id!==id);renderMessages();renderDashboard();showToast('Mensaje eliminado','success');
+    messages=messages.filter(m=>m.id!==id);renderMessages();renderDashboard();showToast('Mensaje eliminado','success');saveData();
   });
 }
 
@@ -3636,11 +4016,12 @@ function buildVacHtmlEmployee(emp){
 /* ═══════════════════════════════════════
    MI PERFIL
 ═══════════════════════════════════════ */
-function renderPerfil(){
+function renderPerfil(forceEmpId){
   const container=document.getElementById('perfil-content');
   if(!container) return;
-  if(currentUser!=='empleado'){container.innerHTML='';return;}
-  const empId=window._loggedEmpId||'e4';
+  // forceEmpId allows other profiles (calidad) to refresh the employee's perfil after resolving
+  const empId=forceEmpId||(currentUser==='empleado'?(window._loggedEmpId||'e4'):null);
+  if(!empId){container.innerHTML='';return;}
   const emp=employees.find(e=>e.id===empId);
   if(!emp) return;
   const sec=getSector(emp.sector);
@@ -3648,16 +4029,23 @@ function renderPerfil(){
   // Tools: hide assignee info for employee
   const toolsHtml=buildToolsHtmlEmployee(emp);
 
-  // Mensajes automáticos de vacaciones enviados a este empleado
-  const vacMsgs=messages.filter(m=>m.tipo==='individual'&&m.to===emp.id&&m.sistemaAutomatico);
-  const vacMsgHtml=vacMsgs.length?`
+  // Notificaciones recientes: mensajes individuales automáticos + eventos masivos de RRHH
+  const recentMsgs=messages.filter(m=>
+    (m.tipo==='individual'&&m.to===emp.id&&m.sistemaAutomatico) ||
+    (m.tipo==='masivo'||m.tipo==='evento')
+  ).sort((a,b)=>new Date(b.fecha)-new Date(a.fecha)).slice(0,5);
+
+  const vacMsgHtml=recentMsgs.length?`
     <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
-      <div style="font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);font-weight:700;margin-bottom:10px;">📬 Notificaciones de RRHH</div>
-      ${vacMsgs.slice(0,3).map(m=>`<div style="padding:10px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;">
-        <div style="font-size:13px;font-weight:500;">${m.asunto}</div>
-        <div style="font-size:12px;color:var(--text2);margin-top:4px;white-space:pre-line;">${m.body}</div>
-        <div style="font-size:11px;color:var(--text3);margin-top:4px;">${fmtDatetime(m.fecha)}</div>
-      </div>`).join('')}
+      <div style="font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);font-weight:700;margin-bottom:10px;">🔔 Notificaciones recientes</div>
+      ${recentMsgs.map(m=>{
+        const icon={masivo:'📢',evento:'📅',individual:'✉️'}[m.tipo]||'📩';
+        return`<div style="padding:10px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;margin-bottom:8px;">
+          <div style="font-size:13px;font-weight:500;">${icon} ${m.asunto}</div>
+          ${m.body?`<div style="font-size:12px;color:var(--text2);margin-top:4px;white-space:pre-line;">${m.body.slice(0,120)}${m.body.length>120?'…':''}</div>`:''}
+          <div style="font-size:11px;color:var(--text3);margin-top:4px;">${fmtDatetime(m.fecha)}</div>
+        </div>`;
+      }).join('')}
     </div>`:'';
 
   container.innerHTML=`
@@ -3834,6 +4222,7 @@ function registrarErrorHerramienta(empId, toolId, toolName){
   renderPerfil();
   if(can('dashboard')) renderDashboard();
   showToast('Error reportado. Calidad fue notificado.','info');
+  saveData();
 }
 
 function _elegirResponsableCalidad(){
@@ -3869,8 +4258,8 @@ function resolverErrorHerramienta(notifId){
 
 function finalizarResolucionError(empId, toolId, notifId, taskId){
   const emp=employees.find(e=>e.id===empId);
-  // Delete the error flag from the employee
-  if(emp&&emp.errores) delete emp.errores[toolId];
+  // Delete error flag if not already done by doSaveEmployee
+  if(emp&&emp.errores&&emp.errores[toolId]) delete emp.errores[toolId];
   // Mark the calidad notification as resolved
   const notif=notifications.find(n=>n.id===notifId);
   const toolName=notif?notif.toolName:toolId;
@@ -3878,7 +4267,7 @@ function finalizarResolucionError(empId, toolId, notifId, taskId){
   // Complete the assigned task
   const task=tasks.find(t=>t.id===taskId);
   if(task) task.done=true;
-  // Send individual message to employee — this is what they see in their dashboard and Mensajes
+  // Send individual message to employee
   messages.unshift({
     id:'msg'+Date.now(),
     tipo:'individual',
@@ -3894,16 +4283,739 @@ function finalizarResolucionError(empId, toolId, notifId, taskId){
   });
   renderDashboard();
   renderEmployees();
-  // If the affected employee is currently viewing their profile, refresh it
-  if(document.getElementById('page-perfil')?.classList.contains('active')) renderPerfil();
+  if(document.getElementById('page-perfil')?.classList.contains('active')) renderPerfil(empId);
   if(document.getElementById('page-emp-dashboard')?.classList.contains('active')) renderEmpDashboard();
-  showToast('Error resuelto. '+emp.nombre+' fue notificado/a.','success');
+  showToast('Error resuelto. '+(emp?emp.nombre:'Empleado')+' fue notificado/a.','success');
+  saveData();
 }
 
 function togglePass(elId,pass){
   const el=document.getElementById(elId);
   if(!el) return;
   el.textContent=el.textContent==='••••••••'?pass:'••••••••';
+}
+
+/* ═══════════════════════════════════════
+   CALENDARIO — RECORDATORIOS
+═══════════════════════════════════════ */
+function _calEmpId(){
+  if(currentUser==='empleado') return window._loggedEmpId||'e4';
+  // Para otros perfiles usamos su ID de empleado si existe, o un key por perfil
+  const match=employees.find(e=>e.userDamatec===DEMO_CREDS[currentUser]?.user);
+  return match?match.id:'__'+currentUser;
+}
+
+function renderCalendario(){
+  const container=document.getElementById('calendario-content');
+  if(!container) return;
+
+  const empId=_calEmpId();
+  const today=new Date();
+  const viewKey='cal_view_'+empId;
+  if(!window._calView) window._calView={};
+  if(!window._calView[empId]) window._calView[empId]={year:today.getFullYear(),month:today.getMonth()};
+  const {year,month}=window._calView[empId];
+
+  const daysInMonth=new Date(year,month+1,0).getDate();
+  const firstDay=new Date(year,month,1).getDay();
+  const monthName=new Date(year,month,1).toLocaleDateString('es-AR',{month:'long',year:'numeric'});
+  const todayStr=today.toISOString().split('T')[0];
+
+  // Mis recordatorios + eventos masivos de RRHH (tipo evento/masivo de messages)
+  const myReminders=reminders.filter(r=>r.empId===empId);
+  const massiveEvents=messages.filter(m=>
+    (m.tipo==='masivo'||m.tipo==='evento')&&m.eventDate
+  ).map(m=>({
+    id:m.id,
+    empId:'__masivo__',
+    titulo:m.asunto,
+    fecha:m.eventDate.split('T')[0],
+    hora:m.eventDate.includes('T')?m.eventDate.split('T')[1].slice(0,5):'',
+    color:'#534AB7',
+    readonly:true,
+  }));
+  const allEvents=[...myReminders,...massiveEvents];
+
+  // Build day → events map
+  const dayMap={};
+  allEvents.forEach(r=>{
+    if(!dayMap[r.fecha]) dayMap[r.fecha]=[];
+    dayMap[r.fecha].push(r);
+  });
+
+  const dayNames=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+
+  // Calendar grid
+  let calHtml='<div class="cal-grid" style="grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px;">';
+  dayNames.forEach(d=>{ calHtml+=`<div style="text-align:center;font-size:11px;font-weight:600;color:var(--text3);padding:4px 0;">${d}</div>`; });
+  calHtml+='</div>';
+  calHtml+='<div class="cal-grid" style="grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:24px;">';
+  for(let i=0;i<firstDay;i++) calHtml+='<div></div>';
+  for(let d=1;d<=daysInMonth;d++){
+    const dateStr=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isToday=dateStr===todayStr;
+    const dayEvts=dayMap[dateStr]||[];
+    calHtml+=`<div onclick="renderCalendarioDia('${dateStr}')" style="min-height:72px;padding:6px;border-radius:var(--radius);border:1px solid ${isToday?'var(--accent)':'var(--border)'};background:${isToday?'var(--accent-glow)':'var(--surface)'};cursor:pointer;transition:border-color .15s;" onmouseover="this.style.borderColor='var(--accent2)'" onmouseout="this.style.borderColor='${isToday?'var(--accent)':'var(--border)'}'">
+      <div style="font-size:12px;font-weight:${isToday?'700':'500'};color:${isToday?'var(--accent)':'var(--text)'};margin-bottom:4px;">${d}</div>
+      ${dayEvts.slice(0,3).map(r=>`<div style="font-size:10px;padding:2px 5px;border-radius:3px;background:${r.color}22;color:${r.color};font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px;">${r.titulo}</div>`).join('')}
+      ${dayEvts.length>3?`<div style="font-size:10px;color:var(--text3);">+${dayEvts.length-3} más</div>`:''}
+    </div>`;
+  }
+  calHtml+='</div>';
+
+  // Upcoming reminders list
+  const upcoming=[...allEvents]
+    .filter(r=>r.fecha>=todayStr)
+    .sort((a,b)=>a.fecha.localeCompare(b.fecha)||(a.hora||'').localeCompare(b.hora||''));
+
+  let listHtml='';
+  if(upcoming.length){
+    upcoming.forEach(r=>{
+      const isToday=r.fecha===todayStr;
+      listHtml+=`<div style="display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;${isToday?'border-left:3px solid var(--accent);':''}">`
+        +`<div style="width:10px;height:10px;border-radius:50%;background:${r.color};flex-shrink:0;"></div>`
+        +`<div style="flex:1;">`
+        +`<div style="font-size:13px;font-weight:600;color:var(--text);">${r.titulo}${r.readonly?' <span style="font-size:10px;padding:1px 6px;border-radius:10px;background:var(--purple-dim);color:var(--purple);">RRHH</span>':''}</div>`
+        +`<div style="font-size:11px;color:var(--text3);margin-top:2px;">${formatDate(r.fecha)}${r.hora?' · '+r.hora+' hs':''}</div>`
+        +`</div>`
+        +(!r.readonly?`<button class="btn btn-sm btn-secondary" onclick="editReminder('${r.id}');event.stopPropagation()">✏️</button>`
+          +`<button class="btn btn-sm btn-danger" onclick="deleteReminder('${r.id}');event.stopPropagation()">🗑️</button>`:'')
+        +`</div>`;
+    });
+  } else {
+    listHtml='<div style="color:var(--text3);font-size:13px;padding:8px 0;">Sin próximos recordatorios</div>';
+  }
+
+  container.innerHTML=`
+    <div class="grid-2" style="gap:24px;">
+      <div class="panel" style="padding:20px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <button class="btn btn-sm btn-secondary" onclick="calNavMonth(-1,'${empId}')">◀</button>
+          <div style="font-size:14px;font-weight:600;color:var(--text);text-transform:capitalize;">${monthName}</div>
+          <button class="btn btn-sm btn-secondary" onclick="calNavMonth(1,'${empId}')">▶</button>
+        </div>
+        ${calHtml}
+      </div>
+      <div>
+        <div class="panel" style="margin-bottom:16px;">
+          <div class="panel-header"><div class="panel-title">📋 Próximos eventos</div></div>
+          ${listHtml}
+        </div>
+        <div id="cal-day-detail"></div>
+      </div>
+    </div>`;
+
+  // Setup color picker
+  setupReminderColorPicker();
+}
+
+function calNavMonth(dir,empId){
+  if(!window._calView) window._calView={};
+  if(!window._calView[empId]) window._calView[empId]={year:new Date().getFullYear(),month:new Date().getMonth()};
+  let {year,month}=window._calView[empId];
+  month+=dir;
+  if(month>11){month=0;year++;}
+  if(month<0){month=11;year--;}
+  window._calView[empId]={year,month};
+  renderCalendario();
+}
+
+function renderCalendarioDia(dateStr){
+  const empId=_calEmpId();
+  const myReminders=reminders.filter(r=>r.empId===empId&&r.fecha===dateStr);
+  const massiveEvents=messages.filter(m=>(m.tipo==='masivo'||m.tipo==='evento')&&m.eventDate&&m.eventDate.startsWith(dateStr));
+  const allEvts=[...myReminders,...massiveEvents.map(m=>({id:m.id,titulo:m.asunto,hora:m.eventDate?.split('T')[1]?.slice(0,5)||'',color:'#534AB7',readonly:true}))];
+  const detail=document.getElementById('cal-day-detail');
+  if(!detail) return;
+  if(!allEvts.length){detail.innerHTML='';return;}
+  detail.innerHTML=`<div class="panel">
+    <div class="panel-header"><div class="panel-title">📅 ${formatDate(dateStr)}</div></div>
+    ${allEvts.map(r=>`<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);">
+      <div style="width:8px;height:8px;border-radius:50%;background:${r.color};flex-shrink:0;"></div>
+      <div style="flex:1;"><div style="font-size:13px;font-weight:500;">${r.titulo}</div>${r.hora?`<div style="font-size:11px;color:var(--text3);">${r.hora} hs</div>`:''}</div>
+      ${!r.readonly?`<button class="btn btn-sm btn-danger" onclick="deleteReminder('${r.id}')">🗑️</button>`:''}
+    </div>`).join('')}
+  </div>`;
+}
+
+function openModalReminder(date){
+  document.getElementById('reminder-modal-title').textContent='Nuevo recordatorio';
+  document.getElementById('reminder-edit-id').value='';
+  document.getElementById('reminder-titulo').value='';
+  document.getElementById('reminder-fecha').value=date||new Date().toISOString().split('T')[0];
+  document.getElementById('reminder-hora').value='09:00';
+  document.getElementById('reminder-color').value='#185FA5';
+  setupReminderColorPicker('#185FA5');
+  openModal('modal-reminder');
+}
+
+function editReminder(id){
+  const r=reminders.find(x=>x.id===id);
+  if(!r) return;
+  document.getElementById('reminder-modal-title').textContent='Editar recordatorio';
+  document.getElementById('reminder-edit-id').value=id;
+  document.getElementById('reminder-titulo').value=r.titulo;
+  document.getElementById('reminder-fecha').value=r.fecha;
+  document.getElementById('reminder-hora').value=r.hora||'09:00';
+  document.getElementById('reminder-color').value=r.color||'#185FA5';
+  setupReminderColorPicker(r.color||'#185FA5');
+  openModal('modal-reminder');
+}
+
+function saveReminder(){
+  const titulo=document.getElementById('reminder-titulo').value.trim();
+  const fecha=document.getElementById('reminder-fecha').value;
+  const hora=document.getElementById('reminder-hora').value;
+  const color=document.getElementById('reminder-color').value||'#185FA5';
+  const editId=document.getElementById('reminder-edit-id').value;
+  if(!titulo||!fecha){showToast('Completá título y fecha','error');return;}
+  const empId=_calEmpId();
+  if(editId){
+    const idx=reminders.findIndex(r=>r.id===editId);
+    if(idx!==-1) reminders[idx]={...reminders[idx],titulo,fecha,hora,color};
+  } else {
+    reminders.push({id:'r'+Date.now(),empId,titulo,fecha,hora,color,createdBy:empId});
+  }
+  closeModal('modal-reminder');
+  renderCalendario();
+  saveData();
+  showToast(editId?'Recordatorio actualizado':'Recordatorio creado','success');
+}
+
+function deleteReminder(id){
+  confirm2('¿Eliminar recordatorio?','Esta acción no se puede deshacer.',()=>{
+    reminders=reminders.filter(r=>r.id!==id);
+    renderCalendario();
+    renderCalendarioDia&&document.getElementById('cal-day-detail')&&(document.getElementById('cal-day-detail').innerHTML='');
+    saveData();
+    showToast('Recordatorio eliminado','success');
+  });
+}
+
+function setupReminderColorPicker(selected){
+  const colorsEl=document.getElementById('reminder-colors');
+  if(!colorsEl) return;
+  const sel=selected||document.getElementById('reminder-color')?.value||'#185FA5';
+  colorsEl.querySelectorAll('.reminder-color-opt').forEach(el=>{
+    const c=el.dataset.color;
+    el.style.border=c===sel?'3px solid var(--text)':'3px solid transparent';
+    el.onclick=()=>{
+      document.getElementById('reminder-color').value=c;
+      setupReminderColorPicker(c);
+    };
+  });
+}
+
+/* ═══════════════════════════════════════
+   COBRANZAS — inyección y scope aislado
+═══════════════════════════════════════ */
+let _cobInitialized = false;
+function initCobranzas(){
+  const wrapper = document.getElementById('cob-wrapper');
+  if(!wrapper) return;
+  if(_cobInitialized) return; // solo inicializar una vez
+  _cobInitialized = true;
+
+  // ── Inyectar HTML del dashboard ──
+  wrapper.innerHTML = `
+    <div class="cob-header">
+      <div class="cob-logo">
+        <div class="cob-logo-mark">📡</div>
+        <div class="cob-logo-text">
+          <h2>Control de Cobranzas</h2>
+          <span>MOVISTAR · GRUPO CORPORATIVO</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="cob-header-date" id="cob-fecha-hoy"></div>
+        <button class="cob-btn-refresh" onclick="cobRecargarTodo()">↻ Actualizar todo</button>
+      </div>
+      <div class="cob-objetivo-chip">OBJETIVO ≤ 8.00% MORA</div>
+    </div>
+    <div class="cob-main">
+      <div class="hint">
+        <strong>Cómo conectar:</strong> Google Sheet → Archivo → Compartir → Publicar en la web → elegí la hoja → <code>CSV</code> → copiá el link y pegalo en el casillero correspondiente.
+      </div>
+      <div class="main-nav">
+        <button class="main-nav-btn active" onclick="cobSwitchView('config',this)">⚙️ Configuración</button>
+        <button class="main-nav-btn" onclick="cobSwitchView('pendientes',this)">📋 Pendientes</button>
+        <button class="main-nav-btn" onclick="cobSwitchView('analitica',this)">📊 Analítica de Deuda</button>
+      </div>
+      <div class="main-view active" id="cob-view-config">
+        <div class="s-title" style="margin-top:0;">Configuración de fuentes de datos</div>
+        <div class="rrss-blocks" id="cob-rrss-blocks"></div>
+      </div>
+      <div class="main-view" id="cob-view-pendientes">
+        <div class="s-title" style="margin-top:0;">Trabajo pendiente · consolidado total</div>
+        <div class="global-banner" id="cob-global-banner">
+          <div class="g-kpi-total">
+            <div class="global-total-label">Total pendiente</div>
+            <div class="global-total-num" id="cob-g-total">—</div>
+            <div class="global-total-sub" id="cob-g-sub">Cargá datos para ver</div>
+          </div>
+          <div class="g-kpi"><div class="g-kpi-icon">📋</div><div class="g-kpi-num" id="cob-g-cobf1">—</div><div class="g-kpi-lbl">Cobranza F1 pendiente</div></div>
+          <div class="g-kpi"><div class="g-kpi-icon">📋</div><div class="g-kpi-num" id="cob-g-cobf2">—</div><div class="g-kpi-lbl">Cobranza F2 pendiente</div></div>
+          <div class="g-kpi"><div class="g-kpi-icon">🔄</div><div class="g-kpi-num" id="cob-g-reverif">—</div><div class="g-kpi-lbl">Reverificaciones de deuda activa</div></div>
+          <div class="g-kpi"><div class="g-kpi-icon">📞</div><div class="g-kpi-num" id="cob-g-gest">—</div><div class="g-kpi-lbl">Gestiones de cobranza</div></div>
+        </div>
+        <div class="s-title">Pendientes por mes y producto</div>
+        <div id="cob-pend-por-mes"></div>
+        <div class="s-title">Índice de mora por producto y mes</div>
+        <div id="cob-mora-por-producto"></div>
+      </div>
+      <div class="main-view" id="cob-view-analitica">
+        <div class="s-title" style="margin-top:0;">Analítica de deuda</div>
+        <div class="an-filter-row">
+          <label>Filtrar por:</label>
+          <select id="cob-an-filter-rrss" onchange="cobRenderAnalitica()">
+            <option value="TODOS">Todas las RRSS</option>
+            <option value="dmt">Damatec</option>
+            <option value="oc">Opción Cuyo</option>
+          </select>
+          <select id="cob-an-filter-mes" onchange="cobRenderAnalitica()">
+            <option value="TODOS">Todos los meses</option>
+            <option value="0">Mes 1</option><option value="1">Mes 2</option>
+            <option value="2">Mes 3</option><option value="3">Mes 4</option>
+          </select>
+          <select id="cob-an-filter-prod" onchange="cobRenderAnalitica()">
+            <option value="TODOS">Todos los productos</option>
+            <option value="fibra">Fibra Óptica</option><option value="repro">Repro</option>
+            <option value="porta">Portabilidad</option><option value="pyme">PYME</option>
+          </select>
+        </div>
+        <div class="an-grid-2">
+          <div class="an-card"><div class="an-card-header">% Mora por equipo <span class="an-card-badge" id="cob-an-equipo-cnt">—</span></div><div class="an-scroll" id="cob-an-equipo-bars"></div></div>
+          <div class="an-card"><div class="an-card-header">Ranking peores vendedores <span class="an-card-badge" id="cob-an-rank-cnt">—</span></div><div class="an-scroll" id="cob-an-rank-bars"></div></div>
+        </div>
+        <div class="an-card an-section"><div class="an-card-header">Evolución de mora por equipo · mes a mes</div><div style="overflow-x:auto;"><table class="evo-table" id="cob-an-evo-table"><tbody><tr><td class="empty-txt" style="border:none;">Cargá datos para ver la evolución.</td></tr></tbody></table></div></div>
+        <div class="an-card an-section"><div class="an-card-header">Deuda por vendedor · detalle <span class="an-card-badge" id="cob-an-vend-cnt">—</span></div><div class="an-scroll" style="max-height:480px;overflow-x:auto;"><table class="vend-table" id="cob-an-vend-table"><thead><tr><th>Equipo</th><th>Vendedor</th><th>Ventas</th><th>% Mora</th><th>Deuda F1</th><th>Deuda F2</th><th>F1+F2</th><th>Total deuda</th></tr></thead><tbody id="cob-an-vend-tbody"></tbody></table></div></div>
+      </div>
+    </div>`;
+
+  // ── Fecha ──
+  document.getElementById('cob-fecha-hoy').textContent =
+    new Date().toLocaleDateString('es-AR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+
+  // ── JS del dashboard en scope aislado ──
+  (function(){
+    // Helper: busca elementos dentro del wrapper
+    function cobEl(id){ return document.getElementById('cob-'+id); }
+
+    const RRSS_CFG=[
+      {id:'dmt',name:'Damatec',color:'#f59e0b',cls:'dmt',products:[
+        {id:'fibra',name:'Fibra Óptica',color:'#34d399',cls:'fibra'},
+        {id:'repro',name:'Repro',color:'#60a5fa',cls:'repro'},
+        {id:'porta',name:'Portabilidad',color:'#c084fc',cls:'porta'},
+        {id:'pyme',name:'PYME',color:'#fb923c',cls:'pyme'},
+      ]},
+      {id:'oc',name:'Opción Cuyo',color:'#818cf8',cls:'oc',products:[
+        {id:'fibra',name:'Fibra Óptica',color:'#34d399',cls:'fibra'},
+        {id:'repro',name:'Repro',color:'#60a5fa',cls:'repro'},
+        {id:'porta',name:'Portabilidad',color:'#c084fc',cls:'porta'},
+      ]},
+    ];
+    const MONTHS=4;
+    const cobState={};
+    RRSS_CFG.forEach(r=>{
+      cobState[r.id]={};
+      r.products.forEach(p=>{
+        cobState[r.id][p.id]=Array.from({length:MONTHS},(_,i)=>({url:'',name:`Mes ${i+1}`,rows:null,status:'idle'}));
+      });
+    });
+    const todayMs=new Date().setHours(0,0,0,0);
+
+    // Exponer funciones que necesita el HTML inline
+    window.cobSwitchView=function(view,btn){
+      wrapper.querySelectorAll('.main-view').forEach(el=>el.classList.remove('active'));
+      wrapper.querySelectorAll('.main-nav-btn').forEach(el=>el.classList.remove('active'));
+      cobEl('view-'+view).classList.add('active');
+      btn.classList.add('active');
+      if(view==='analitica') cobRenderAnalitica();
+    };
+    window.cobRecargarTodo=async function(){
+      for(const r of RRSS_CFG)
+        for(const p of r.products)
+          for(let i=0;i<MONTHS;i++)
+            if(cobState[r.id][p.id][i].url) await cobCargarSlot(r.id,p.id,i);
+    };
+
+    // Build UI
+    cobEl('rrss-blocks').innerHTML=RRSS_CFG.map(r=>`
+      <div class="rrss-block">
+        <div class="rrss-block-header">
+          <div class="rrss-pip" style="background:${r.color}"></div>
+          <span class="rrss-name">${r.name}</span>
+          <span class="rrss-sub">${r.products.length} productos</span>
+        </div>
+        <div class="products-grid">
+          ${r.products.map(p=>`
+            <div class="product-col">
+              <div class="product-header">
+                <div class="prod-dot" style="background:${p.color}"></div>
+                <span class="prod-name">${p.name}</span>
+              </div>
+              <div class="month-slots">
+                ${Array.from({length:MONTHS},(_,i)=>`
+                  <div class="month-slot" id="cob-slot-${r.id}-${p.id}-${i}">
+                    <div class="month-slot-head">
+                      <span class="slot-num">MES ${i+1}</span>
+                      <input class="slot-name-input" id="cob-sname-${r.id}-${p.id}-${i}" value="Mes ${i+1}" placeholder="Nombre"
+                        onchange="(function(){cobState_update('${r.id}','${p.id}',${i},'name',this.value)}).call(this)">
+                      <span class="slot-status" id="cob-sstatus-${r.id}-${p.id}-${i}">sin datos</span>
+                    </div>
+                    <div class="slot-body">
+                      <input class="slot-url" id="cob-surl-${r.id}-${p.id}-${i}" placeholder="Link CSV de Google Sheets">
+                      <button class="slot-btn" onclick="cobCargarSlot('${r.id}','${p.id}',${i})">↓ Cargar</button>
+                    </div>
+                    <div class="slot-summary" id="cob-ssummary-${r.id}-${p.id}-${i}"></div>
+                  </div>`).join('')}
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>`).join('');
+
+    window.cobState_update=function(rId,pId,i,key,val){ cobState[rId][pId][i][key]=val; cobRenderAll(); };
+
+    // Proxies
+    const PROXIES=[
+      url=>`https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+      url=>`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+      url=>`https://thingproxy.freeboard.io/fetch/${url}`,
+    ];
+    function toBaseCsvUrl(url){
+      if(url.includes('output=csv')||url.includes('export?format=csv')) return url;
+      const match=url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      const gid=(url.match(/gid=(\d+)/)||[])[1]||'0';
+      if(match) return`https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv&gid=${gid}`;
+      return url;
+    }
+    async function fetchWithFallback(url){
+      const baseUrl=toBaseCsvUrl(url);
+      for(const proxy of PROXIES){
+        try{
+          const resp=await fetch(proxy(baseUrl));
+          if(!resp.ok) continue;
+          const text=await resp.text();
+          if(text&&text.length>10) return text;
+        }catch(e){continue;}
+      }
+      throw new Error('No se pudo acceder al archivo. Verificá que esté publicado como CSV y sea público.');
+    }
+
+    window.cobCargarSlot=async function(rId,pId,mIdx){
+      const url=cobEl(`surl-${rId}-${pId}-${mIdx}`).value.trim();
+      if(!url){alert('Pegá el link CSV primero.');return;}
+      cobState[rId][pId][mIdx].url=url;
+      cobSetSlotStatus(rId,pId,mIdx,'loading','cargando...');
+      try{
+        const text=await fetchWithFallback(url);
+        const rows=cobParseCSV(text).map(cobNormalizeRow);
+        if(rows.length<1) throw new Error('El archivo parece estar vacío.');
+        cobState[rId][pId][mIdx].rows=rows;
+        cobState[rId][pId][mIdx].name=cobEl(`sname-${rId}-${pId}-${mIdx}`).value||`Mes ${mIdx+1}`;
+        const total=rows.length,deuda=rows.filter(r=>r._hasDebt).length;
+        const pct=total>0?(deuda/total*100).toFixed(1):'0.0';
+        const sum=cobEl(`ssummary-${rId}-${pId}-${mIdx}`);
+        sum.textContent=`${total} clientes · ${deuda} con deuda · ${pct}% mora`;
+        sum.className='slot-summary show';
+        cobSetSlotStatus(rId,pId,mIdx,'ok',`✓ ${total} filas`);
+        cobRenderAll();
+      }catch(e){
+        cobSetSlotStatus(rId,pId,mIdx,'err','✗ error');
+        alert(`Error (${rId}/${pId}/Mes ${mIdx+1}): ${e.message}`);
+      }
+    };
+
+    function cobSetSlotStatus(rId,pId,mIdx,cls,txt){
+      const el=cobEl(`sstatus-${rId}-${pId}-${mIdx}`);
+      el.className='slot-status '+cls; el.textContent=txt;
+    }
+
+    function cobParseCSV(text){
+      const lines=text.split('\n').filter(l=>l.trim());
+      if(lines.length<2) return[];
+      const rawHeaders=cobParseLine(lines[0]);
+      const seen={};
+      const headers=rawHeaders.map(h=>{const k=h.trim();if(!seen[k]){seen[k]=1;return k;}seen[k]++;return k+'_'+seen[k];});
+      return lines.slice(1).map(line=>{const vals=cobParseLine(line);const obj={};headers.forEach((h,j)=>obj[h]=(vals[j]||'').trim());return obj;}).filter(r=>Object.values(r).some(v=>v));
+    }
+    function cobParseLine(line){const res=[];let cur='',inQ=false;for(let i=0;i<line.length;i++){const c=line[i];if(c==='"'){inQ=!inQ;}else if(c===','&&!inQ){res.push(cur);cur='';}else cur+=c;}res.push(cur);return res;}
+    function cobNormalizeRow(r){
+      const n={};for(const k in r)n[k.trim()]=r[k];
+      const df1=(n['DEUDA F1']||'').trim().toUpperCase();
+      const df2=(n['DEUDA F2']||'').trim().toUpperCase();
+      const hF1=df1==='OK'||df1==='SI';const hF2=df2==='SI';
+      if(hF1&&hF2)n._cat='F1,2';else if(hF1)n._cat='F1';else if(hF2)n._cat='F2';else n._cat='NONE';
+      n._hasDebt=hF1||hF2;
+      const vto1=cobParseFecha(n['1° VTO']||n['1 VTO']||'');
+      const vto2=cobParseFecha(n['2° VTO']||n['2 VTO']||'');
+      const verif1=cobParseFecha(n['VERIF/PAGO']||n['VERIF/ PAGO']||'');
+      const verif2=cobParseFecha(n['VERIF/PAGO_2']||n['VERIF/ PAGO.1']||n['VERIF/PAGO.1']||'');
+      n._vto1=vto1;n._vto2=vto2;
+      n._cobF1=!!(vto1&&vto1<=todayMs&&!verif1);
+      n._cobF2=!!(vto2&&vto2<=todayMs&&!verif2);
+      n._pendReverif=n._hasDebt;
+      return n;
+    }
+    function cobParseFecha(s){
+      if(!s||!s.trim()) return null;
+      const parts=s.trim().split(/[\/\-]/);
+      if(parts.length<3) return null;
+      const[a,b,c]=parts;
+      const d=a.length===4?new Date(+a,+b-1,+c):new Date(+c,+b-1,+a);
+      return isNaN(d)?null:d.setHours(0,0,0,0);
+    }
+
+    function cobFmt(n){return n>=1000?(n/1000).toFixed(1)+'k':String(n);}
+    function cobMoraColor(p){return p<0.07?'#16a34a':p<0.08?'#b45309':'#dc2626';}
+    function cobMoraCls(p){return p<0.07?'num-ok':p<0.08?'num-warn':'num-danger';}
+
+    function cobRenderAll(){
+      cobRenderGlobal();cobRenderPendientesPorMes();cobRenderMoraPorProducto();
+    }
+
+    function cobRenderGlobal(){
+      let cobF1=0,cobF2=0,reverif=0,gest=0,fuentes=0;
+      RRSS_CFG.forEach(r=>r.products.forEach(p=>{
+        cobState[r.id][p.id].forEach(m=>{
+          if(!m.rows) return;
+          fuentes++;
+          m.rows.forEach(row=>{
+            if(row._cobF1) cobF1++;
+            if(row._cobF2) cobF2++;
+            if(row._pendReverif) reverif++;
+            if(row._hasDebt) gest++;
+          });
+        });
+      }));
+      if(!fuentes) return;
+      const total=cobF1+cobF2+reverif+gest;
+      cobEl('g-total').textContent=total.toLocaleString('es-AR');
+      cobEl('g-sub').textContent=`en ${fuentes} archivos cargados`;
+      cobEl('g-cobf1').textContent=cobF1.toLocaleString('es-AR');
+      cobEl('g-cobf2').textContent=cobF2.toLocaleString('es-AR');
+      cobEl('g-reverif').textContent=reverif.toLocaleString('es-AR');
+      cobEl('g-gest').textContent=gest.toLocaleString('es-AR');
+    }
+
+    function cobRenderPendientesPorMes(){
+      const container=cobEl('pend-por-mes');
+      if(!container) return;
+
+      const monthNames=Array.from({length:MONTHS},(_,i)=>{
+        let name=`Mes ${i+1}`;
+        for(const r of RRSS_CFG) for(const p of r.products){
+          const inp=cobEl(`sname-${r.id}-${p.id}-${i}`);
+          if(inp&&inp.value&&inp.value!==`Mes ${i+1}`){name=inp.value;break;}
+        }
+        return name;
+      });
+
+      let anyData=false;
+      RRSS_CFG.forEach(r=>r.products.forEach(p=>cobState[r.id][p.id].forEach(m=>{if(m.rows)anyData=true;})));
+      if(!anyData){container.innerHTML='<div class="empty-txt">Cargá datos para ver los pendientes por mes y producto.</div>';return;}
+
+      let html='';
+      for(let mIdx=0;mIdx<MONTHS;mIdx++){
+        let hasDataThisMonth=false;
+        RRSS_CFG.forEach(r=>r.products.forEach(p=>{if(cobState[r.id][p.id][mIdx].rows)hasDataThisMonth=true;}));
+        if(!hasDataThisMonth) continue;
+
+        // Build rows
+        let rows='';
+        RRSS_CFG.forEach(r=>{
+          r.products.forEach(p=>{
+            const slot=cobState[r.id][p.id][mIdx];
+            if(!slot.rows) return;
+            const data=slot.rows;
+            const total=data.length;
+            const deuda=data.filter(x=>x._hasDebt).length;
+            const f1=data.filter(x=>x._cat==='F1').length;
+            const f2=data.filter(x=>x._cat==='F2').length;
+            const f12=data.filter(x=>x._cat==='F1,2').length;
+            const cF1=data.filter(x=>x._cobF1).length;
+            const cF2=data.filter(x=>x._cobF2).length;
+            const rev=data.filter(x=>x._pendReverif).length;
+            const gest=deuda;
+            const pct=total>0?deuda/total:0;
+            const moraCls=pct<0.07?'num-ok':pct<0.08?'num-warn':'num-danger';
+            rows+=`<tr>
+              <td><span class="rrss-chip ${r.cls}">${r.name}</span></td>
+              <td><span class="prod-chip ${p.cls}">${p.name}</span></td>
+              <td class="num-muted">${total}</td>
+              <td class="${deuda>0?'num-danger':'num-ok'}">${deuda}</td>
+              <td class="${moraCls}">${(pct*100).toFixed(2)}%</td>
+              <td class="${f1>0?'num-warn':'num-zero'}">${f1}</td>
+              <td class="${f2>0?'num-danger':'num-zero'}">${f2}</td>
+              <td class="${f12>0?'num-danger':'num-zero'}">${f12}</td>
+              <td class="${cF1>0?'num-warn':'num-zero'}">${cF1}</td>
+              <td class="${cF2>0?'num-warn':'num-zero'}">${cF2}</td>
+              <td class="${rev>0?'num-warn':'num-zero'}">${rev}</td>
+              <td class="${gest>0?'num-danger':'num-zero'}">${gest}</td>
+            </tr>`;
+          });
+        });
+
+        // Build totals row
+        let tTotal=0,tDeuda=0,tF1=0,tF2=0,tF12=0,tCF1=0,tCF2=0,tRev=0,tGest=0;
+        RRSS_CFG.forEach(r=>r.products.forEach(p=>{
+          const slot=cobState[r.id][p.id][mIdx];
+          if(!slot.rows) return;
+          const data=slot.rows;
+          tTotal+=data.length;
+          tDeuda+=data.filter(x=>x._hasDebt).length;
+          tF1+=data.filter(x=>x._cat==='F1').length;
+          tF2+=data.filter(x=>x._cat==='F2').length;
+          tF12+=data.filter(x=>x._cat==='F1,2').length;
+          tCF1+=data.filter(x=>x._cobF1).length;
+          tCF2+=data.filter(x=>x._cobF2).length;
+          tRev+=data.filter(x=>x._pendReverif).length;
+          tGest+=data.filter(x=>x._hasDebt).length;
+        }));
+        const tPct=tTotal>0?tDeuda/tTotal:0;
+        const tMoraCls=tPct<0.07?'num-ok':tPct<0.08?'num-warn':'num-danger';
+        const totalsRow=tTotal?`<tr class="subtotal">
+          <td colspan="2">TOTAL MES</td>
+          <td class="num-muted">${tTotal}</td>
+          <td class="${tDeuda>0?'num-danger':'num-ok'}">${tDeuda}</td>
+          <td class="${tMoraCls}">${(tPct*100).toFixed(2)}%</td>
+          <td class="${tF1>0?'num-warn':'num-zero'}">${tF1}</td>
+          <td class="${tF2>0?'num-danger':'num-zero'}">${tF2}</td>
+          <td class="${tF12>0?'num-danger':'num-zero'}">${tF12}</td>
+          <td class="${tCF1>0?'num-warn':'num-zero'}">${tCF1}</td>
+          <td class="${tCF2>0?'num-warn':'num-zero'}">${tCF2}</td>
+          <td class="${tRev>0?'num-warn':'num-zero'}">${tRev}</td>
+          <td class="${tGest>0?'num-danger':'num-zero'}">${tGest}</td>
+        </tr>`:'';
+
+        html+=`<div class="pend-month-block">
+          <div class="pend-month-title">${monthNames[mIdx]}</div>
+          <div class="pend-table-wrap">
+            <table class="pend-table">
+              <thead><tr>
+                <th>RRSS</th><th>Producto</th><th>Clientes</th><th>Con Deuda</th>
+                <th>% Mora</th><th>Deuda F1</th><th>Deuda F2</th><th>Deuda F1+F2</th>
+                <th>📋 Cobranza F1</th><th>📋 Cobranza F2</th><th>🔄 Reverif.</th><th>📞 Gestionar</th>
+              </tr></thead>
+              <tbody>${rows}${totalsRow}</tbody>
+            </table>
+          </div>
+        </div>`;
+      }
+      container.innerHTML=html||'<div class="empty-txt">Sin datos cargados.</div>';
+    }
+
+    function cobRenderMoraPorProducto(){
+      const container=cobEl('mora-por-producto');
+      if(!container) return;
+
+      let anyData=false;
+      RRSS_CFG.forEach(r=>r.products.forEach(p=>cobState[r.id][p.id].forEach(m=>{if(m.rows)anyData=true;})));
+      if(!anyData){container.innerHTML='<div class="empty-txt">Sin datos.</div>';return;}
+
+      let html='';
+      RRSS_CFG.forEach(r=>{
+        let rHasData=false;
+        r.products.forEach(p=>cobState[r.id][p.id].forEach(m=>{if(m.rows)rHasData=true;}));
+        if(!rHasData) return;
+
+        const monthNames=Array.from({length:MONTHS},(_,i)=>{
+          const inp=cobEl(`sname-${r.id}-${r.products[0].id}-${i}`);
+          return inp?inp.value:`Mes ${i+1}`;
+        });
+
+        const prodRows=r.products.map(p=>{
+          let acumTotal=0,acumDeuda=0;
+          const cells=Array.from({length:MONTHS},(_,i)=>{
+            const slot=cobState[r.id][p.id][i];
+            if(!slot.rows) return '<td class="num-zero">—</td>';
+            const t=slot.rows.length;
+            const d=slot.rows.filter(x=>x._hasDebt).length;
+            acumTotal+=t;acumDeuda+=d;
+            const pct=t>0?d/t:0;
+            const cls=pct<0.07?'num-ok':pct<0.08?'num-warn':'num-danger';
+            return`<td class="${cls}">${(pct*100).toFixed(2)}%<br><span class="num-muted" style="font-size:9px;">${d}/${t}</span></td>`;
+          }).join('');
+          const aPct=acumTotal>0?acumDeuda/acumTotal:0;
+          const aCls=aPct<0.07?'num-ok':aPct<0.08?'num-warn':'num-danger';
+          return`<tr>
+            <td><span class="prod-chip ${p.cls}">${p.name}</span></td>
+            ${cells}
+            <td class="${aCls}" style="font-weight:700;">${(aPct*100).toFixed(2)}%<br><span class="num-muted" style="font-size:9px;">${acumDeuda}/${acumTotal}</span></td>
+          </tr>`;
+        }).join('');
+
+        html+=`<div style="margin-bottom:20px;">
+          <div class="pend-month-title" style="color:var(--cob-mov-blue-dk);">${r.name}</div>
+          <div class="pend-table-wrap">
+            <table class="pend-table">
+              <thead><tr>
+                <th>Producto</th>
+                ${monthNames.map(n=>`<th>${n}</th>`).join('')}
+                <th>ACUMULADO</th>
+              </tr></thead>
+              <tbody>${prodRows}</tbody>
+            </table>
+          </div>
+        </div>`;
+      });
+      container.innerHTML=html;
+    }
+
+    function cobGetFilteredRows(rrssFil,mesFil,prodFil){
+      const rows=[];
+      RRSS_CFG.forEach(r=>{
+        if(rrssFil!=='TODOS'&&r.id!==rrssFil) return;
+        r.products.forEach(p=>{
+          if(prodFil!=='TODOS'&&p.id!==prodFil) return;
+          cobState[r.id][p.id].forEach((m,mIdx)=>{
+            if(mesFil!=='TODOS'&&mIdx!==parseInt(mesFil)) return;
+            if(!m.rows) return;
+            m.rows.forEach(row=>rows.push({...row,_rrss:r.name,_prod:p.name,_mIdx:mIdx}));
+          });
+        });
+      });
+      return rows;
+    }
+
+    window.cobRenderAnalitica=function(){
+      const rrssFil=cobEl('an-filter-rrss').value;
+      const mesFil=cobEl('an-filter-mes').value;
+      const prodFil=cobEl('an-filter-prod').value;
+      const rows=cobGetFilteredRows(rrssFil,mesFil,prodFil);
+      if(!rows.length){
+        ['an-equipo-bars','an-rank-bars','an-vend-tbody'].forEach(id=>{
+          cobEl(id).innerHTML='<div class="empty-txt">Sin datos cargados.</div>';
+        });return;
+      }
+      // Equipo bars
+      const eq={};
+      rows.forEach(r=>{const e=(r['EQUIPO']||'Sin equipo').trim();if(!eq[e])eq[e]={t:0,d:0};eq[e].t++;if(r._hasDebt)eq[e].d++;});
+      const eqList=Object.entries(eq).map(([n,v])=>({n,...v,p:v.t>0?v.d/v.t:0})).sort((a,b)=>b.p-a.p);
+      cobEl('an-equipo-cnt').textContent=eqList.length;
+      cobEl('an-equipo-bars').innerHTML=eqList.map((e,i)=>`<div class="bar-row"><span class="bar-rank">${i+1}</span><span class="bar-label" title="${e.n}">${e.n}</span><div class="bar-wrap"><div class="bar-fill" style="width:${Math.min(e.p/0.12*100,100).toFixed(1)}%;background:${cobMoraColor(e.p)}"></div></div><span class="bar-pct ${cobMoraCls(e.p)}">${(e.p*100).toFixed(2)}%</span><span class="bar-count">${e.d}/${e.t}</span></div>`).join('')||'<div class="empty-txt">Sin datos.</div>';
+      // Ranking vendedores
+      const vd={};
+      rows.forEach(r=>{const v=(r['VENDEDOR']||'Sin vendedor').trim();const e=(r['EQUIPO']||'').trim();if(!vd[v])vd[v]={t:0,d:0,e};vd[v].t++;if(r._hasDebt)vd[v].d++;});
+      const vList=Object.entries(vd).filter(([,v])=>v.t>=3).map(([n,v])=>({n,...v,p:v.t>0?v.d/v.t:0})).sort((a,b)=>b.p-a.p).slice(0,20);
+      cobEl('an-rank-cnt').textContent=vList.length;
+      cobEl('an-rank-bars').innerHTML=vList.map((v,i)=>`<div class="bar-row"><span class="bar-rank">${i+1}</span><span class="bar-label vendedor" title="${v.n}">${v.n}</span><div class="bar-wrap"><div class="bar-fill" style="width:${Math.min(v.p/0.12*100,100).toFixed(1)}%;background:${cobMoraColor(v.p)}"></div></div><span class="bar-pct ${cobMoraCls(v.p)}">${(v.p*100).toFixed(2)}%</span><span class="bar-count">${v.d}/${v.t}</span></div>`).join('')||'<div class="empty-txt">Sin datos.</div>';
+      // Evo table
+      const equipos=new Set();
+      const data={};
+      const monthNames=Array.from({length:MONTHS},(_,i)=>{const el=cobEl(`sname-${RRSS_CFG[0].id}-${RRSS_CFG[0].products[0].id}-${i}`);return el?el.value:`Mes ${i+1}`;});
+      RRSS_CFG.forEach(r=>{if(rrssFil!=='TODOS'&&r.id!==rrssFil) return;r.products.forEach(p=>{if(prodFil!=='TODOS'&&p.id!==prodFil) return;cobState[r.id][p.id].forEach((m,mIdx)=>{if(!m.rows) return;m.rows.forEach(row=>{const e=(row['EQUIPO']||'Sin equipo').trim();equipos.add(e);if(!data[e])data[e]={};if(!data[e][mIdx])data[e][mIdx]={t:0,d:0};data[e][mIdx].t++;if(row._hasDebt)data[e][mIdx].d++;});});});});
+      const eqArr=[...equipos].sort();
+      const activeMonths=Array.from({length:MONTHS},(_,i)=>i).filter(i=>eqArr.some(e=>data[e]&&data[e][i]));
+      cobEl('an-evo-table').innerHTML=!eqArr.length?'<tbody><tr><td class="empty-txt" style="border:none;">Sin datos.</td></tr></tbody>':`<thead><tr><th>Equipo</th>${activeMonths.map(i=>`<th>${monthNames[i]}</th>`).join('')}</tr></thead><tbody>${eqArr.map(e=>`<tr><td>${e}</td>${activeMonths.map(i=>{if(!data[e]||!data[e][i])return'<td class="num-zero">—</td>';const p=data[e][i].t>0?data[e][i].d/data[e][i].t:0;return`<td class="${cobMoraCls(p)}">${(p*100).toFixed(2)}%<br><span style="font-size:10px;color:var(--cob-muted)">${data[e][i].d}/${data[e][i].t}</span></td>`;}).join('')}</tr>`).join('')}</tbody>`;
+      // Vend table
+      const vd2={};
+      rows.forEach(r=>{const v=(r['VENDEDOR']||'Sin vendedor').trim();const e=(r['EQUIPO']||'').trim();if(!vd2[v])vd2[v]={e,t:0,d:0,f1:0,f2:0,f12:0};vd2[v].t++;if(r._hasDebt)vd2[v].d++;if(r._cat==='F1')vd2[v].f1++;if(r._cat==='F2')vd2[v].f2++;if(r._cat==='F1,2')vd2[v].f12++;});
+      const vList2=Object.entries(vd2).map(([n,v])=>({n,...v,p:v.t>0?v.d/v.t:0})).sort((a,b)=>b.p-a.p);
+      cobEl('an-vend-cnt').textContent=vList2.length;
+      cobEl('an-vend-tbody').innerHTML=vList2.map(v=>`<tr><td><span class="rrss-chip dmt" style="background:#f0f9ff;color:#0369a1;border-color:#bae6fd">${v.e||'—'}</span></td><td>${v.n}</td><td class="num-muted">${v.t}</td><td class="${cobMoraCls(v.p)}">${(v.p*100).toFixed(2)}%</td><td class="${v.f1>0?'num-warn':'num-zero'}">${v.f1}</td><td class="${v.f2>0?'num-danger':'num-zero'}">${v.f2}</td><td class="${v.f12>0?'num-danger':'num-zero'}">${v.f12}</td><td class="${v.d>0?'num-danger':'num-ok'}">${v.d}</td></tr>`).join('')||'<tr><td colspan="8" class="empty-txt">Sin datos.</td></tr>';
+    };
+  })(); // fin IIFE
 }
 
 /* ═══════════════════════════════════════
@@ -3978,12 +5090,12 @@ function openSettingsDetail(action){
 }
 
 function saveSettingsDetail(){if(settingsDetailAction)settingsDetailAction();}
-function addTool(){const name=document.getElementById('new-tool-name')?.value.trim();const forAll=document.getElementById('new-tool-scope')?.value==='true';if(!name){showToast('Ingresá un nombre','error');return;}toolsConfig.tools.push({id:'tool_'+Date.now(),name,forAll});openSettingsDetail('tools');showToast('Herramienta agregada','success');}
-function deleteTool(idx){confirm2('¿Eliminar herramienta?','Esta acción no se puede deshacer.',()=>{toolsConfig.tools.splice(idx,1);openSettingsDetail('tools');showToast('Herramienta eliminada','success');});}
-function addCustomField(type){const label=document.getElementById('cf-label')?.value.trim();const ftype=document.getElementById('cf-type')?.value;if(!label){showToast('Ingresá un nombre','error');return;}if(type==='emp')customEmpFields.push({label,type:ftype});else customPdvFields.push({label,type:ftype});openSettingsDetail(type==='emp'?'empfields':'pdvfields');showToast('Campo agregado','success');}
-function removeCustomField(type,idx){confirm2('¿Eliminar campo?','Se quitará de todos los perfiles.',()=>{if(type==='emp')customEmpFields.splice(idx,1);else customPdvFields.splice(idx,1);openSettingsDetail(type==='emp'?'empfields':'pdvfields');showToast('Campo eliminado','success');});}
-function renameSector(id){const sec=sectors.find(s=>s.id===id);if(!sec) return;const n=prompt(`Nuevo nombre para "${sec.name}":`,sec.name);if(n&&n.trim()){sec.name=n.trim();buildSectorFilter();renderEmployees();openSettingsDetail('sectors');showToast('Sector renombrado','success');}}
-function deleteSector(id){const sec=sectors.find(s=>s.id===id);if(!sec) return;if(employees.some(e=>e.sector===id)){showToast('No se puede eliminar: hay empleados en este sector','error');return;}confirm2('¿Eliminar sector?',`Se eliminará <strong>${sec.name}</strong>.`,()=>{sectors=sectors.filter(s=>s.id!==id);buildSectorFilter();openSettingsDetail('sectors');showToast('Sector eliminado','success');});}
+function addTool(){const name=document.getElementById('new-tool-name')?.value.trim();const forAll=document.getElementById('new-tool-scope')?.value==='true';if(!name){showToast('Ingresá un nombre','error');return;}toolsConfig.tools.push({id:'tool_'+Date.now(),name,forAll});openSettingsDetail('tools');showToast('Herramienta agregada','success');saveData();}
+function deleteTool(idx){confirm2('¿Eliminar herramienta?','Esta acción no se puede deshacer.',()=>{toolsConfig.tools.splice(idx,1);openSettingsDetail('tools');showToast('Herramienta eliminada','success');saveData();});}
+function addCustomField(type){const label=document.getElementById('cf-label')?.value.trim();const ftype=document.getElementById('cf-type')?.value;if(!label){showToast('Ingresá un nombre','error');return;}if(type==='emp')customEmpFields.push({label,type:ftype});else customPdvFields.push({label,type:ftype});openSettingsDetail(type==='emp'?'empfields':'pdvfields');showToast('Campo agregado','success');saveData();}
+function removeCustomField(type,idx){confirm2('¿Eliminar campo?','Se quitará de todos los perfiles.',()=>{if(type==='emp')customEmpFields.splice(idx,1);else customPdvFields.splice(idx,1);openSettingsDetail(type==='emp'?'empfields':'pdvfields');showToast('Campo eliminado','success');saveData();});}
+function renameSector(id){const sec=sectors.find(s=>s.id===id);if(!sec) return;const n=prompt(`Nuevo nombre para "${sec.name}":`,sec.name);if(n&&n.trim()){sec.name=n.trim();buildSectorFilter();renderEmployees();openSettingsDetail('sectors');showToast('Sector renombrado','success');saveData();}}
+function deleteSector(id){const sec=sectors.find(s=>s.id===id);if(!sec) return;if(employees.some(e=>e.sector===id)){showToast('No se puede eliminar: hay empleados en este sector','error');return;}confirm2('¿Eliminar sector?',`Se eliminará <strong>${sec.name}</strong>.`,()=>{sectors=sectors.filter(s=>s.id!==id);buildSectorFilter();openSettingsDetail('sectors');showToast('Sector eliminado','success');saveData();});}
 
 /* ═══════════════════════════════════════
    UI HELPERS
